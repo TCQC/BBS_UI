@@ -1,0 +1,10 @@
+.header {
+    width: 100%;
+    background-color: #0e90d2;
+}
+
+.header>div {
+    width: 1000px;
+    margin: 0 auto;
+
+}

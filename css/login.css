@@ -1,0 +1,92 @@
+body {
+    background: url("../img/login_bg.jpg") no-repeat;
+}
+
+.main {
+    position: relative;
+    margin: 100px 0 0 20px;
+}
+
+.login-box {
+    width: 714px;
+    margin: 0 auto;
+    border: 1px solid #b3b3b3;
+    border-radius: 3px;
+}
+
+.body::after {
+    clear: both;
+    display: block;
+    content: "";
+}
+
+.body {
+    text-align: center;
+    background-color: #fff;
+    padding: 50px 60px;
+}
+
+.content img {
+    width: 180px;
+}
+
+.content h2 {
+    color: #666;
+    margin: 10px 0 20px 0;
+}
+
+.content input {
+    width: 300px;
+    height: 40px;
+    border: 1px solid #ccc;
+    color: #777;
+    padding-left: 15px;
+    margin-top: 20px;
+    border-radius: 3px;
+}
+.content #submit {
+    width: 316px;
+    height: 41px;
+    margin-top: 20px;
+    border-radius: 3px;
+    background-color: #4daaff;
+    color: #fff;
+}
+
+.content #submit:hover {
+    background-color: #0f9ae0;
+}
+
+.info {
+    height: 70px;
+    line-height: 70px;
+    background-color: #f5f5f5;
+    padding: 0 60px;
+    color: #66b7ff;
+}
+
+.info span {
+    color: #666;
+}
+
+.info a {
+    color: #66b7ff;
+}
+
+.footer {
+    color: #666;
+    padding: 30px 0 10px;
+    font-size: 13px;
+    text-align: center;
+}
+
+.err {
+    display: inline-block;
+    width: 300px;
+    line-height: 40px;
+    padding-left: 16px;
+    border-radius: 6px;
+    text-align: left;
+    color: #c00;
+    background-color: #ffeaea;
+}
