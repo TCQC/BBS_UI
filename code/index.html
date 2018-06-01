@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="css/amazeui.css">
-    <link rel="stylesheet" href="css/myheader.css">
+    <link rel="stylesheet" href="css/index.css">
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/amazeui.min.js"></script>
 </head>
@@ -15,59 +15,104 @@
             <h1 class="am-topbar-brand">
                 <a href="index.html">TCQC-BBS</a>
             </h1>
-
-            <button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-success am-show-sm-only" data-am-collapse="{target: '#doc-topbar-collapse'}"><span class="am-sr-only">导航切换</span> <span class="am-icon-bars"></span></button>
-
             <div class="am-collapse am-topbar-collapse" id="doc-topbar-collapse">
-                <!--<ul class="am-nav am-nav-pills am-topbar-nav">-->
-                    <!--<li class="am-active"><a href="#">首页</a></li>-->
-                    <!--<li><a href="#">项目</a></li>-->
-                    <!--<li class="am-dropdown" data-am-dropdown>-->
-                        <!--<a class="am-dropdown-toggle" data-am-dropdown-toggle href="javascript:;">-->
-                            <!--下拉 <span class="am-icon-caret-down"></span>-->
-                        <!--</a>-->
-                        <!--<ul class="am-dropdown-content">-->
-                            <!--<li class="am-dropdown-header">标题</li>-->
-                            <!--<li><a href="#">1. 去月球</a></li>-->
-                            <!--<li class="am-active"><a href="#">2. 去火星</a></li>-->
-                            <!--<li><a href="#">3. 还是回地球</a></li>-->
-                            <!--<li class="am-disabled"><a href="#">4. 下地狱</a></li>-->
-                            <!--<li class="am-divider"></li>-->
-                            <!--<li><a href="#">5. 桥头一回首</a></li>-->
-                        <!--</ul>-->
-                    <!--</li>-->
-                <!--</ul>-->
 
-                <form class="am-topbar-form am-topbar-left am-form-inline" role="search">
-                    <div class="am-form-group">
-                        <input type="text" class="am-form-field am-input-sm" placeholder="话题或问题">
-                    </div>
-                </form>
+                <!--<form class="am-topbar-form am-topbar-left am-form-inline" role="search">-->
+                    <!--<div class="am-form-group">-->
+                        <!--<input type="text" class="am-form-field am-input-sm" placeholder="话题或问题">-->
+                    <!--</div>-->
+                <!--</form>-->
+                <div class="search am-topbar-left">
+                    <input type="text" placeholder="话题或问题">
+                    <span class="am-icon-search"></span>
+                </div>
 
-
-
+                <!--注册以及管理员登录-->
                 <div class="am-topbar-right">
                     <div class="am-dropdown" data-am-dropdown="{boundary: '.am-topbar'}">
                         <button class="am-btn am-btn-secondary am-topbar-btn am-btn-sm am-dropdown-toggle" data-am-dropdown-toggle>其他 <span class="am-icon-caret-down"></span></button>
                         <ul class="am-dropdown-content">
-                            <li><a href="html/register.html">注册</a></li>
-                            <li><a href="#">管理员登录</a></li>
+                            <li><a href="html/register.html"><span class="am-icon-user-plus myicon"></span>注册</a></li>
+                            <li><a href="#"><span class="am-icon-user-secret myicon"></span>管理员登录</a></li>
                         </ul>
                     </div>
                 </div>
 
+                <!--普通用户登录-->
                 <div class="am-topbar-right">
                     <a href="html/login.html">
                         <button class="am-btn am-btn-primary am-topbar-btn am-btn-sm">登录</button>
                     </a>
-
                 </div>
+
+                <!--登录成功后用户模块-->
+                <div class="am-topbar-right" id="user">
+                    <div class="am-dropdown" data-am-dropdown="{boundary: '.am-topbar'}">
+                        <!--<button class="am-btn am-btn-secondary am-topbar-btn am-btn-sm am-dropdown-toggle" data-am-dropdown-toggle>-->
+                        <!--<img src="http://ask.amazeui.org/uploads/avatar/000/00/59/45_avatar_mid.jpg">-->
+                        <!--</button>-->
+                        <img src="http://ask.amazeui.org/uploads/avatar/000/00/59/45_avatar_mid.jpg" class="am-dropdown-toggle">
+                        <ul class="am-dropdown-content">
+                            <li><a href="#"><span class="am-icon-home myicon"></span>主页</a></li>
+                            <li><a href="#"><span class="am-icon-envelope myicon"></span>私信</a></li>
+                            <li><a href="#"><span class="am-icon-cog myicon"></span>设置</a></li>
+                            <li><a href="#"><span class="am-icon-power-off myicon"></span>退出</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!--登录成功后的发帖功能-->
+                <div class="am-topbar-right">
+                    <div class="am-dropdown" data-am-dropdown="{boundary: '.am-topbar'}">
+                        <button class="am-btn am-btn-secondary am-topbar-btn am-btn-sm am-dropdown-toggle">
+                            发布 <span class="am-icon-caret-down"></span>
+                        </button>
+                        <ul class="am-dropdown-content">
+                            <li><a href="#">发帖</a></li>
+                            <li><a href="#">提问</a></li>
+                        </ul>
+                    </div>
+                </div>
+
             </div>
         </header>
     </div>
 
 </div>
 
+<div class="main">
+    <div class="title">
+        <h2><span class="am-icon-comments"></span>所有版块</h2>
+    </div>
+    <div class="module">
+        <div class="item">
+            <a href="#">
+                <img src="http://ask.amazeui.org/uploads/topic/20160715/53d604c38ca084a2b17355836e3ad69c_50_50.png">
+            </a>
+            <span><a href="#">版块1</a></span>
+            <p>共有<span>3</span>个分类，<span>190</span>个帖子</p>
+            <p>上次更新 <span>2018-04-19</span></p>
+        </div>
+        <div class="item">
+            <a href="#">
+                <img src="http://ask.amazeui.org/uploads/topic/20160715/4474e6024e8a1aa5a8844d8749cc56d5_50_50.png">
+            </a>
+            <span><a href="#">版块2</a></span>
+            <p>共有<span>3</span>个分类，<span>190</span>个帖子</p>
+            <p>上次更新 <span>2018-04-19</span></p>
+        </div>
+        <div class="item">
+            <a href="#">
+                <img src="http://ask.amazeui.org/uploads/topic/20160715/4474e6024e8a1aa5a8844d8749cc56d5_50_50.png">
+            </a>
+            <span><a href="#">版块2</a></span>
+            <p>共有<span>3</span>个分类，<span>190</span>个帖子</p>
+            <p>上次更新 <span>2018-04-19</span></p>
+        </div>
+
+        </div>
+    </div>
+</div>
 
 </body>
 </html>
