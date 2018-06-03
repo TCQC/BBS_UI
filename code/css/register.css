@@ -59,12 +59,6 @@ body {
 .main #submit:hover {
     background-color: #0f9ae0;
 }
-.footer {
-    color: #666;
-    padding: 20px 0 10px;
-    font-size: 13px;
-    text-align: center;
-}
 
 .err {
     display: inline-block;

@@ -73,13 +73,6 @@ body {
     color: #66b7ff;
 }
 
-.footer {
-    color: #666;
-    padding: 30px 0 10px;
-    font-size: 13px;
-    text-align: center;
-}
-
 .err {
     display: inline-block;
     width: 300px;

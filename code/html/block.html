@@ -2,18 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/amazeui.css">
-    <link rel="stylesheet" href="css/index.css">
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/amazeui.min.js"></script>
+    <title>版块内容</title>
+    <link rel="stylesheet" href="../css/amazeui.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/block.css">
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <script src="../js/amazeui.min.js"></script>
 </head>
 <body>
-<div class="header">
+    <div class="header">
     <header class="am-topbar am-topbar-inverse in">
         <h1 class="am-topbar-brand">
-            <a href="index.html">TCQC-BBS</a>
+            <a href="../index.html">TCQC-BBS</a>
         </h1>
         <div class="am-collapse am-topbar-collapse" id="doc-topbar-collapse">
 
@@ -72,44 +72,73 @@
         </div>
     </header>
 </div>
-
-<div class="main">
-    <div class="title">
-        <h2><span class="am-icon-comments"></span>所有版块</h2>
+    <div class="cate">
+        <ul>
+            <li class="active">
+                <a href="#" target="_blank">全部</a>
+            </li>
+            <li>
+                <a href="#" target="_blank">分类2</a>
+            </li>
+            <li>
+                <a href="#" target="_blank">分类3</a>
+            </li>
+        </ul>
     </div>
-    <div class="module">
-        <div class="item">
-            <a href="html/block.html">
-                <img src="http://ask.amazeui.org/uploads/topic/20160715/53d604c38ca084a2b17355836e3ad69c_50_50.png">
-            </a>
-            <span><a href="html/block.html">版块1</a></span>
-            <p>共有<span>3</span>个分类，<span>190</span>个帖子</p>
-            <p>上次更新 <span>2018-04-19</span></p>
+    <div class="main">
+        <div class="title">
+            <h2><span class="am-icon-bars"></span>所有内容</h2>
+            <ul>
+                <li class="newest sort">最新发布</li>
+                <li class="heat">讨论最多</li>
+            </ul>
         </div>
-        <div class="item">
-            <a href="#">
-                <img src="http://ask.amazeui.org/uploads/topic/20160715/4474e6024e8a1aa5a8844d8749cc56d5_50_50.png">
-            </a>
-            <span><a href="#">版块2</a></span>
-            <p>共有<span>3</span>个分类，<span>190</span>个帖子</p>
-            <p>上次更新 <span>2018-04-19</span></p>
-        </div>
-        <div class="item">
-            <a href="#">
-                <img src="http://ask.amazeui.org/uploads/topic/20160715/4474e6024e8a1aa5a8844d8749cc56d5_50_50.png">
-            </a>
-            <span><a href="#">版块2</a></span>
-            <p>共有<span>3</span>个分类，<span>190</span>个帖子</p>
-            <p>上次更新 <span>2018-04-19</span></p>
-        </div>
+        <div class="post-list">
+
+            <div class="post">
+                <a href="#">
+                    <img src="http://ask.amazeui.org/uploads/avatar/000/00/00/01_avatar_max.jpg" alt="">
+                </a>
+                <div class="content">
+                    <h4><a href="#">如何在三周时间内开发一个BBS论坛系统</a></h4>
+                </div>
+                <div class="description">
+                    <span class="user">团子</span> 发布了贴子
+                    • <span>41</span> 人收藏
+                    • <span>57</span> 个回复
+                    • <span>2018-04-27 17:29</span>
+                </div>
+                <div class="reply">
+                    <button class="am-btn am-btn-secondary am-round rpl">回复</button>&nbsp;&nbsp;
+                    <button class="am-btn am-btn-success am-round focus">关注</button>
+                </div>
+            </div>
+            <!--copy-->
+            <div class="post" id="">
+                <a href="#">
+                    <img src="http://ask.amazeui.org/uploads/avatar/000/00/00/01_avatar_max.jpg" alt="">
+                </a>
+                <div class="content">
+                    <h4><a href="#">这是标题这是标题</a></h4>
+                </div>
+                <div class="description">
+                    <span class="user">鸡王</span> 发布了贴子
+                    • <span>41</span> 人收藏
+                    • <span>57</span> 个回复
+                    • <span>2018-04-27 17:29</span>
+                </div>
+                <div class="reply">
+                    <button class="am-btn am-btn-secondary am-round rpl">回复</button>&nbsp;&nbsp;
+                    <button class="am-btn am-btn-success am-round focus">关注</button>
+                </div>
+            </div>
 
         </div>
     </div>
-</div>
 
-<div class="footer">
-    Copyright © 2018, <a href="https://github.com/TCQC/JavaWebFinal">TCQC</a> All Rights Reserved
-</div>
-
+    <!--底部信息-->
+    <div class="footer">
+        Copyright © 2018, <a href="https://github.com/TCQC/JavaWebFinal">TCQC</a> All Rights Reserved
+    </div>
 </body>
 </html>

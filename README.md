@@ -13,4 +13,11 @@
 ![](http://imglf3.nosdn.127.net/img/ZHkxOW9FR3pkWXVlS2xHVGRNR3ZTV0M2cDkySGUxRTRGekU0d3JONjRIT3RqSzJiZCswREx3PT0.png)
 
 #### 主页版块及导航栏
-![](http://imglf3.nosdn.127.net/img/ZHkxOW9FR3pkWXZ4NkN1R0pkOW5Yc1RRTGFtYjYvZFRxdGxpQkpERlFCZDUyMEFRT2lxN25RPT0.gif)
+![](http://imglf3.nosdn.127.net/img/ZHkxOW9FR3pkWXZ4NkN1R0pkOW5Yc1RRTGFtYjYvZFRxdGxpQkpERlFCZDUyMEFRT2lxN25RPT0.gif)  
+
+#### 版块页面
+
+- 版块下默认给出所有的帖子
+- 默认按时间顺序排序
+- 点击具体的分类后，跳转到新的页面（再说
+）![](http://imglf5.nosdn.127.net/img/ZHkxOW9FR3pkWXQvTmg0RFp0RG8xWUpoVjcwbTJIK256V0FXS0lobUV6clZxa0l3aDFBaTF3PT0.gif)
