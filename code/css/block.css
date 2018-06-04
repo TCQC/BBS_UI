@@ -118,8 +118,12 @@ body {
     font-size: 14px;
 }
 
-.post .description .user {
+.post .description .user a {
     color: #666;
+}
+
+.post .description .user a:hover {
+    color: #155faa;
 }
 
 .post .reply {
