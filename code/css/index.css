@@ -68,3 +68,11 @@ body {
     color: #999999;
 }
 
+.item .block-admin {
+    color: #666;
+}
+
+.item .block-admin:hover {
+    color: #155faa;
+}
+

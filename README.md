@@ -20,4 +20,4 @@
 - 版块下默认给出所有的帖子
 - 默认按时间顺序排序
 - 点击具体的分类后，跳转到新的页面（再说）  
-![](http://imglf4.nosdn.127.net/img/ZHkxOW9FR3pkWXVqL1d3dlh5Z0lnT3hZTFpkQ2NqSnhCdTdqZFdWbjZxbG1pblpjcTEzQU9BPT0.png)
+![](http://imglf3.nosdn.127.net/img/ZHkxOW9FR3pkWXVQUWpwNW1LaWRncE5mN1FXVnFudkZQMmF3WS9YcVZ2UUNHcFFsQTljWG5BPT0.png)
