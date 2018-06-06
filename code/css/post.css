@@ -41,6 +41,7 @@ body {
 }
 
 .main .article {
+    font-size: 16px;
     padding: 20px 20px 10px 20px;
     color: #666666;
 }
@@ -55,6 +56,77 @@ body {
 
 .time, .comm {
     margin-right: 10px;
+}
+
+.main .comt-title {
+    height: 60px;
+    padding: 10px 20px;
+    margin-top: 20px;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.main .comt-list {
+    padding: 30px 20px;
+}
+
+.main .comt-list .comt {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e6e6e6;
+}
+.main .comt-list .reply {
+    margin-top: 10px;
+    padding-left: 64px;
+}
+
+.main .comt-list .reply .am-comment-bd {
+    font-size: 13px;
+}
+.main .comt-list .at {
+    margin-right: 10px;
+    color: #095f8a;
+    font-size: 14px;
+}
+
+
+
+.info {
+    width: 248px;
+    height: 100%;
+    float: left;
+    padding: 20px 10px 20px 30px;
+    box-sizing: border-box;
+    background-color: #fff;
+    border: 1px solid #e6e6e6;
+    border-radius: 0 4px 4px 0;
+    border-left: none;
+}
+
+.info>div {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #e6e6e6;
+    padding-bottom: 10px;
+}
+.info h3 {
+    color: #333333;
+}
+
+.info .sponsor>div {
+    margin-top: 10px;
+}
+
+.info .sponsor a {
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+.info .relative li {
+    line-height: 18px;
+    margin-top: 8px;
+}
+
+.info .relative li a {
+    font-size: 13px;
 }
 
 

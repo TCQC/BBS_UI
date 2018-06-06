@@ -29,7 +29,7 @@
                 <div class="am-dropdown" data-am-dropdown="{boundary: '.am-topbar'}">
                     <button class="am-btn am-btn-secondary am-topbar-btn am-btn-sm am-dropdown-toggle" data-am-dropdown-toggle>其他 <span class="am-icon-caret-down"></span></button>
                     <ul class="am-dropdown-content">
-                        <li><a href="html/register.html"><span class="am-icon-user-plus myicon"></span>注册</a></li>
+                        <li><a href="register.html"><span class="am-icon-user-plus myicon"></span>注册</a></li>
                         <li><a href="#"><span class="am-icon-user-secret myicon"></span>管理员登录</a></li>
                     </ul>
                 </div>
@@ -37,7 +37,7 @@
 
             <!--普通用户登录-->
             <div class="am-topbar-right">
-                <a href="html/login.html">
+                <a href="login.html">
                     <button class="am-btn am-btn-primary am-topbar-btn am-btn-sm">登录</button>
                 </a>
             </div>
@@ -73,7 +73,7 @@
 
         </div>
     </header>
-</div>
+    </div>
 
     <!--中间主体-->
     <div class="container">
@@ -99,13 +99,147 @@
                 <span class="time">2018-06-09 19:29</span>
                 <span class="comm">
                     <span class="am-icon-commenting-o"></span>
-                    17条评论
+                    <span id="comt-count">17</span>条评论
                 </span>
+            </div>
+            <!--评论区域-->
+            <div class="comt-title">
+                <h2>评论列表</h2>
+            </div>
+
+            <div class="comt-list">
+                <div class="comt">
+                    <!--评论在这里-->
+                    <article class="am-comment"> <!-- 评论容器 -->
+                        <!-- 评论者头像 -->
+                        <a href="">
+                            <img class="am-comment-avatar" src="http://ask.amazeui.org/uploads/avatar/000/00/02/25_avatar_mid.jpg"> <!-- 评论者头像 -->
+                        </a>
+
+                        <div class="am-comment-main">
+                            <header class="am-comment-hd">
+                                <div class="am-comment-meta">
+                                    <a href="#" class="am-comment-author">团子</a> <!-- 评论者 -->
+                                    评论于 <time datetime="">2018-06-06 20:01</time> <!--time-->
+                                </div>
+                            </header>
+
+                            <div class="am-comment-bd">
+                                妙哉啊，这是评论（一级回复）,而且是我是话唠，写了很多东西，测试下排版会发生什么变化，然而并不会发生什么变化，前端牛逼！
+                                66666666666666666666666666666666666666666666阿三地方经济阿发发骚发酵粉萨福
+                            </div> <!-- 评论内容 -->
+                        </div>
+                    </article>
+
+                    <!--回复在这里-->
+                    <div class="reply">
+                        <article class="am-comment"> <!-- 评论容器 -->
+                            <!-- 评论者头像 -->
+                            <a href="">
+                                <img class="am-comment-avatar" src="http://ask.amazeui.org/uploads/avatar/000/00/02/25_avatar_mid.jpg"> <!-- 评论者头像 -->
+                            </a>
+
+                            <div class="am-comment-main">
+                                <header class="am-comment-hd">
+                                    <div class="am-comment-meta">
+                                        <a href="#" class="am-comment-author">鸡王</a> <!-- 评论者 -->
+                                        回复于 <time datetime="">2018-06-06 20:01</time> <!--time-->
+                                    </div>
+                                </header>
+
+                                <div class="am-comment-bd">
+                                    <span class="at">@团子</span>妙哉啊，这是评论（二级回复）,而且是我是话唠，写了很多东西，测试下排版会发生什么变化，然而并不会发生什么变化，前端牛逼！
+                                    233333333333333333
+                                </div> <!-- 评论内容 -->
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="reply">
+                        <article class="am-comment"> <!-- 评论容器 -->
+                            <!-- 评论者头像 -->
+                            <a href="">
+                                <img class="am-comment-avatar" src="http://ask.amazeui.org/uploads/avatar/000/00/02/25_avatar_mid.jpg"> <!-- 评论者头像 -->
+                            </a>
+
+                            <div class="am-comment-main">
+                                <header class="am-comment-hd">
+                                    <div class="am-comment-meta">
+                                        <a href="#" class="am-comment-author">鸡王</a> <!-- 评论者 -->
+                                        回复于 <time datetime="">2018-06-06 20:01</time> <!--time-->
+                                    </div>
+                                </header>
+
+                                <div class="am-comment-bd">
+                                    <span class="at">@鸡王</span>傻不拉鸡王
+                                </div> <!-- 评论内容 -->
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <!--第二个测试评论-->
+                <div class="comt">
+                    <article class="am-comment"> <!-- 评论容器 -->
+                        <!-- 评论者头像 -->
+                        <a href="">
+                            <img class="am-comment-avatar" src="http://ask.amazeui.org/uploads/avatar/000/00/02/25_avatar_mid.jpg"> <!-- 评论者头像 -->
+                        </a>
+
+                        <div class="am-comment-main">
+                            <header class="am-comment-hd">
+                                <div class="am-comment-meta">
+                                    <a href="#" class="am-comment-author">田宇琛</a> <!-- 评论者 -->
+                                    评论于 <time datetime="">2018-06-06 20:01</time> <!--time-->
+                                </div>
+                            </header>
+
+                            <div class="am-comment-bd">
+                                我只想说在坐的各位都是垃圾
+                            </div> <!-- 评论内容 -->
+                        </div>
+                    </article>
+                </div>
+
             </div>
         </div>
         <div class="info">
-
+            <div class="sponsor">
+                <h3>发起人</h3>
+                <div>
+                    <img src="http://ask.amazeui.org/uploads/avatar/000/00/02/25_avatar_mid.jpg" alt="">
+                    <a href="#">万明老师</a>
+                </div>
+            </div>
+            <div class="relative">
+                <h3>相关帖子</h3>
+                <ul>
+                    <li>
+                        <a href="">相关帖子相关帖子相关帖子ddfdfdfdd中</a>
+                    </li>
+                    <li>
+                        <a href="">xxxxxxxxxxxxxx</a>
+                    </li>
+                    <li>
+                        <a href="">表单怎么实现手机号码验证？看了官方文档还是不懂那个js引入，求大神解释一下，在线等。。。。</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
+
+
+    <!--回到顶部-->
+    <div data-am-widget="gotop" class="am-gotop am-gotop-fixed" >
+        <a href="#" title="">
+            <i class="am-gotop-icon am-icon-chevron-up"></i>
+        </a>
+    </div>
+
+    <!--底部信息-->
+    <div class="footer">
+        Copyright © 2018, <a href="https://github.com/TCQC">TCQC</a> All Rights Reserved
+    </div>
+
 </body>
 </html>

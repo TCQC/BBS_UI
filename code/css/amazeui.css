@@ -4098,13 +4098,13 @@ a.am-badge:focus {
   float: left;
   width: 32px;
   height: 32px;
-  border-radius: 50%;
+  border-radius: 2px;
   border: 1px solid transparent;
 }
 @media only screen and (min-width:641px) {
   .am-comment-avatar {
-    width: 48px;
-    height: 48px;
+    width: 40px;
+    height: 40px;
   }
 }
 .am-comment-main {
@@ -4176,7 +4176,9 @@ a.am-badge:focus {
   color: #999999;
 }
 .am-comment-bd {
-  padding: 15px;
+  font-size: 14px;
+  color: #666666;
+  padding: 10px 15px;
   overflow: hidden;
 }
 .am-comment-bd > :last-child {
@@ -11723,14 +11725,14 @@ tbody.am-collapse.am-in {
   */
 .am-gotop-fixed {
   position: fixed;
-  right: 10px;
+  right: 100px;
   bottom: 10px;
   z-index: 1010;
   opacity: 0;
-  width: 32px;
+  width: 50px;
   min-height: 32px;
   overflow: hidden;
-  border-radius: 0;
+  border-radius: 50%;
   text-align: center;
 }
 .am-gotop-fixed.am-active {
@@ -11752,8 +11754,8 @@ tbody.am-collapse.am-in {
 }
 .am-gotop-fixed .am-gotop-icon {
   width: 100%;
-  line-height: 32px;
-  background-color: #555555;
+  line-height: 50px;
+  background-color: #19a7f0;
   vertical-align: middle;
   color: #ddd;
 }

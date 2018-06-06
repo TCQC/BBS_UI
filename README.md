@@ -27,3 +27,7 @@
 - **讨论最多**：按评论数排序，讨论多的不一定是精华帖，和推荐不矛盾。
 - 界面和版块主页差不多，避免界面单一，略有不同  
 ![](http://imglf5.nosdn.127.net/img/ZHkxOW9FR3pkWXN1NWRXRmpFV3luekxMWTB3QzByTFJ2YjZ4a2E3bjV2V3luaGplelBLbFdRPT0.png)
+
+#### 文章页面
+- 评论回复入口实现中。。。  
+![](http://imglf5.nosdn.127.net/img/ZHkxOW9FR3pkWXVzS1RsWDFpTEFXMlFieDdlOWF3aGFNYjAzZ3ZkZ1U3a0VSZzBWSHVLaURRPT0.gif)
