@@ -6,6 +6,7 @@ body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input
 input[type="submit"],button {
     cursor: pointer;
     border: none;
+    outline: none;
 }
 
 input {
@@ -42,7 +43,13 @@ a {
     padding: 10px 0 0 10px;
     height: 40px;
 }
+
+.search div {
+    height: 30px;
+}
+
 .search input[type="text"] {
+    height: 100%;
     padding: 4px 0 4px 10px;
     color: #666;
     border: none;
@@ -55,13 +62,12 @@ a {
     cursor: pointer;
     text-align: center;
     width: 30px;
-    height: 29px;
+    height: 100%;
     background-color: #fff;
     color: #ccc;
     float: left;
     border-radius: 0 4px 4px 0;
 }
-
 
 #user img {
     cursor: pointer;

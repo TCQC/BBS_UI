@@ -68,16 +68,10 @@ function checkAll() {
         var pass = $("#pass").val();
 
         $.ajax({
-                url: "http://192.168.43.217:8080/user/register",
-                dataType: "json",
+                url: "https://192.168.43.217:8080/user/id/7",
+                dataType: "jsonp",
                 async: true,
-                type: "POST",
-                contentType: 'multipart/form-data',
-                data: {
-                    'nickname': nickname,
-                    'username': email,
-                    'password': pass
-                },
+                type: "GET",
                 success: function (data) {
                     console.log(data);
                 },
