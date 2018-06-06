@@ -1,0 +1,60 @@
+body {
+    background-color: #f0f0f0;
+}
+
+.container {
+    width: 1000px;
+    margin: 60px auto;
+}
+
+.container:after {
+    display: block;
+    content: "";
+    clear: both;
+}
+.main {
+    background-color: #fff;
+    width: 750px;
+    /*height: 500px;*/
+    border-radius: 4px 0 0 4px;
+    border: 1px solid #e6e6e6;
+    float: left;
+}
+.main .title {
+    position: relative;
+    min-height: 80px;
+    padding: 20px;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.main .title h1 {
+    width: 500px;
+    font-size: 20px;
+    color: #333333;
+}
+
+.main .title button {
+    border-radius: 4px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.main .article {
+    padding: 20px 20px 10px 20px;
+    color: #666666;
+}
+.main .status {
+    padding: 0 20px;
+}
+
+.main .status span {
+    font-size: 14px;
+    color: #999999;
+}
+
+.time, .comm {
+    margin-right: 10px;
+}
+
+

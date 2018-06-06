@@ -63,9 +63,32 @@ function checkAll() {
     if(!(checkName() && checkPass() && checkEmail() && checkPassAg())){
         return false;
     } else {
-        //ajax submit
-        okStyle();
-        regOk();
+        var nickname = $("#name").val();
+        var email = $("#email").val();
+        var pass = $("#pass").val();
+
+        $.ajax({
+                url: "http://192.168.43.217:8080/user/register",
+                dataType: "json",
+                async: true,
+                type: "POST",
+                contentType: 'multipart/form-data',
+                data: {
+                    'nickname': nickname,
+                    'username': email,
+                    'password': pass
+                },
+                success: function (data) {
+                    console.log(data);
+                },
+                error: function (xhr) {
+                    alert(xhr.status);
+                }
+            }
+        );
+
+        // okStyle();
+        // regOk();
     }
 }
 //clear error info

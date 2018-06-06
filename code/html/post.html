@@ -2,18 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>TCQC BBS</title>
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/amazeui.css">
-    <link rel="stylesheet" href="css/index.css">
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/amazeui.min.js"></script>
+    <title>文章|问题</title>
+    <link rel="stylesheet" href="../css/amazeui.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/post.css">
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <script src="../js/amazeui.min.js"></script>
 </head>
 <body>
-<div class="header">
+    <div class="header">
     <header class="am-topbar am-topbar-inverse in">
         <h1 class="am-topbar-brand">
-            <a href="index.html">TCQC-BBS</a>
+            <a href="../index.html">TCQC-BBS</a>
         </h1>
         <div class="am-collapse am-topbar-collapse" id="doc-topbar-collapse">
 
@@ -73,43 +73,37 @@
     </header>
 </div>
 
-<div class="main">
-    <div class="title">
-        <h2><span class="am-icon-comments"></span>所有版块</h2>
-    </div>
-    <div class="module">
-        <div class="item">
-            <a href="html/block.html" >
-                <img src="http://ask.amazeui.org/uploads/topic/20160715/53d604c38ca084a2b17355836e3ad69c_50_50.png" title="这是版块的描述">
-            </a>
-            <span><a href="html/block.html">版块1</a></span>
-            <p>共有<span>3</span>个分类，<span>190</span>个帖子 &nbsp;版主：<a class="block-admin" href="#">团子</a></p>
-            <p>上次更新 <span>2018-04-19</span></p>
+    <!--中间主体-->
+    <div class="container">
+        <div class="main">
+            <div class="title">
+                <h1>这是一个标题，关于文章主题的一个简要描述，如果标题输的太长会怎么样呢,经过测试，显然不会怎么样</h1>
+                <button class="am-btn am-btn-success am-radius">收藏 • <span>5</span></button>
+            </div>
+
+            <!--文章主体-->
+            <div class="article">
+                <p>
+                    那时候刚好下着雨，柏油路面湿冷冷的，还闪烁着青、黄、红颜色的灯火。我们就在骑楼下躲雨，看绿色的邮筒孤独地站在街的对面。我白色风衣的大口袋里有一封要寄给南部的母亲的信。樱子说她可以撑伞过去帮我寄信。我默默点头。
+                    “谁叫我们只带来一把小伞哪。”她微笑着说，一面撑起伞，准备过马路帮我寄信。从她伞骨渗下来的小雨点，溅在我的眼镜玻璃上。
+                    随着一阵拔尖的煞车声，樱子的一生轻轻地飞了起来。缓缓地，飘落在湿冷的街面上，好像一只夜晚的蝴蝶。
+                    虽然是春天，好像已是秋深了。
+                    她只是过马路去帮我寄信。这简单的行动，却要叫我终身难忘了。我缓缓睁开眼，茫然站在骑楼下，眼里裹着滚烫的泪水。世上所有的车子都停了下来，人潮涌向马路中央。没有人知道那躺在街面的，就是我的，蝴蝶。这时她只离我五公尺，竟是那么遥远。更大的雨点溅在我的眼镜上，溅到我的生命里来。
+                </p>
+            </div>
+
+            <!--文章状态信息-->
+            <div class="status">
+                <span class="time">2018-06-09 19:29</span>
+                <span class="comm">
+                    <span class="am-icon-commenting-o"></span>
+                    17条评论
+                </span>
+            </div>
         </div>
-        <div class="item">
-            <a href="#">
-                <img src="http://ask.amazeui.org/uploads/topic/20160715/4474e6024e8a1aa5a8844d8749cc56d5_50_50.png">
-            </a>
-            <span><a href="#">版块2</a></span>
-            <p>共有<span>3</span>个分类，<span>190</span>个帖子</p>
-            <p>上次更新 <span>2018-04-19</span></p>
-        </div>
-        <div class="item">
-            <a href="#">
-                <img src="http://ask.amazeui.org/uploads/topic/20160715/4474e6024e8a1aa5a8844d8749cc56d5_50_50.png">
-            </a>
-            <span><a href="#">版块2</a></span>
-            <p>共有<span>3</span>个分类，<span>190</span>个帖子</p>
-            <p>上次更新 <span>2018-04-19</span></p>
-        </div>
+        <div class="info">
 
         </div>
     </div>
-</div>
-
-<div class="footer">
-    Copyright © 2018, <a href="https://github.com/TCQC/JavaWebFinal">TCQC</a> All Rights Reserved
-</div>
-
 </body>
 </html>

@@ -1,45 +1,10 @@
 body {
     background-color: #f0f0f0;
 }
-.cate {
-    padding-left: 15px;
-    margin: 20px auto;
-    width: 1000px;
-}
-
-.cate:after {
-    display: block;
-    content: "";
-    clear: both;
-}
-
-.cate li {
-    float: left;
-    line-height: 30px;
-    margin: 0 10px 10px 0;
-    font-size: 14px;
-    text-align: center;
-    cursor: pointer;
-    border-radius: 4px;
-}
-
-.cate li a {
-    display: block;
-    padding: 0 10px;
-    color: #17344A;
-}
-
-.cate li:hover , .active{
-    background: #494a4b;
-}
-
-.active a, .cate li:hover a {
-    color: #fff !important;
-}
 
 .container {
     width: 1000px;
-    margin: 20px auto;
+    margin: 60px auto;
 }
 
 .container:after {
@@ -57,37 +22,44 @@ body {
 }
 
 .main .title {
-    width: 100%;
-    height: 60px;
-    line-height: 60px;
-    color: #444444;
-    border-bottom: 1px solid #e6e6e6;
-    box-sizing: border-box;
-    padding: 0 20px 0 30px;
+    position: relative;
+    height: 90px;
+    padding: 20px;
 }
 
 .main .title h2 {
-    float: left;
+    position: absolute;
+    top: 30px;
+    left: 90px;
 }
 
-.main .title span {
-    margin-right: 10px;
+.main ul {
+    width: 100%;
+    display: block;
+    padding: 2px 20px;
+    border-bottom: 1px solid #e6e6e6;
 }
 
-.main .title li {
+.main ul:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+.main ul li {
     padding: 0 5px;
-    height: 56px;
+    line-height: 36px;
     cursor: pointer;
     font-size: 14px;
     margin: 0 20px 0 0;
     color: #666666;
-    float: right;
+    float: left;
 }
 
-.sort, .main .title li:hover {
+.sort, .main ul li:hover {
     border-bottom: 2px solid #155faa;
     font-weight: bold;
 }
+
 .post-list {
     padding: 0 20px;
 }
@@ -164,18 +136,20 @@ body {
     color: #333333;
 }
 
-.block-info {
+.cate-info {
     margin-top: 10px;
     color: #666666;
     font-size: 14px;
     line-height: 24px;
 }
 
-.icon img {
-    margin-left: 25px;
-    width: 150px;
-}
-
-.adm img {
+.info .block {
     margin-top: 10px;
+    display: inline-block;
+    line-height: 24px;
+    padding: 2px 5px;
+    background-color: #8dc0f0;
+    font-size: 14px;
+    color: #fff;
+    border-radius: 4px;
 }

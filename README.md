@@ -21,3 +21,9 @@
 - 默认按时间顺序排序
 - 点击具体的分类后，跳转到新的页面（再说）  
 ![](http://imglf3.nosdn.127.net/img/ZHkxOW9FR3pkWXVQUWpwNW1LaWRncE5mN1FXVnFudkZQMmF3WS9YcVZ2UUNHcFFsQTljWG5BPT0.png)
+
+#### 版块中具体的某个分类页面
+- **推荐**：给出加精的帖子
+- **讨论最多**：按评论数排序，讨论多的不一定是精华帖，和推荐不矛盾。
+- 界面和版块主页差不多，避免界面单一，略有不同  
+![](http://imglf5.nosdn.127.net/img/ZHkxOW9FR3pkWXN1NWRXRmpFV3luekxMWTB3QzByTFJ2YjZ4a2E3bjV2V3luaGplelBLbFdRPT0.png)
