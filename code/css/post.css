@@ -15,7 +15,6 @@ body {
 .main {
     background-color: #fff;
     width: 750px;
-    /*height: 500px;*/
     border-radius: 4px 0 0 4px;
     border: 1px solid #e6e6e6;
     float: left;
@@ -79,22 +78,30 @@ body {
     padding-left: 64px;
 }
 
+.main .comt-list .am-comment-meta .reptag {
+    position: absolute;
+    display: none;
+    right: 15px;
+}
+
+.am-comment-main:hover .am-comment-meta .reptag {
+    color: #0e90d2;
+    display: inline;
+}
+
 .main .comt-list .reply .am-comment-bd {
     font-size: 13px;
 }
 .main .comt-list .at {
     margin-right: 10px;
-    color: #095f8a;
+    color: #0e90d2;
     font-size: 14px;
 }
 
-
-
 .info {
     width: 248px;
-    height: 100%;
     float: left;
-    padding: 20px 10px 20px 30px;
+    padding: 20px 15px 20px 25px;
     box-sizing: border-box;
     background-color: #fff;
     border: 1px solid #e6e6e6;
@@ -129,4 +136,35 @@ body {
     font-size: 13px;
 }
 
+.cmt-unlogin {
+    text-align: center;
+    color: #666666;
+    font-size: 14px;
+    padding-bottom: 40px;
+}
+
+.am-form {
+    margin-top: 20px;
+}
+.am-form-group {
+    background-color: #fafafa;
+    padding: 10px 10px 10px 64px;
+}
+
+.am-form-group textarea {
+    font-size: 14px;
+    color: #666666;
+}
+
+.am-form-group>div {
+    display: none;
+    margin-top: 10px;
+    text-align: right;
+}
+.am-btn-xs {
+    margin-left: 10px;
+    width: 60px;
+    height: 24px;
+    border-radius: 4px;
+}
 

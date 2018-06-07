@@ -4143,6 +4143,7 @@ a.am-badge:focus {
   }
 }
 .am-comment-hd {
+  position: relative;
   background: #f8f8f8;
   border-bottom: 1px solid #eee;
   display: -webkit-box;

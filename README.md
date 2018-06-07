@@ -29,5 +29,7 @@
 ![](http://imglf5.nosdn.127.net/img/ZHkxOW9FR3pkWXN1NWRXRmpFV3luekxMWTB3QzByTFJ2YjZ4a2E3bjV2V3luaGplelBLbFdRPT0.png)
 
 #### 文章页面
-- 评论回复入口实现中。。。  
 ![](http://imglf5.nosdn.127.net/img/ZHkxOW9FR3pkWXVzS1RsWDFpTEFXMlFieDdlOWF3aGFNYjAzZ3ZkZ1U3a0VSZzBWSHVLaURRPT0.gif)
+
+- 评论效果
+![](http://imglf3.nosdn.127.net/img/ZHkxOW9FR3pkWXZReGcwQVRHN0hBVEI4N1gvV25obmVpWnhtL0xFZDBEK2NNemJsaWczQW5RPT0.gif)
