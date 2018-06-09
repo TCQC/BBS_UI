@@ -33,3 +33,9 @@
 
 - 评论效果
 ![](http://imglf3.nosdn.127.net/img/ZHkxOW9FR3pkWXZReGcwQVRHN0hBVEI4N1gvV25obmVpWnhtL0xFZDBEK2NNemJsaWczQW5RPT0.gif)
+
+#### 发帖编辑页面
+![](http://imglf5.nosdn.127.net/img/ZHkxOW9FR3pkWXV2c2FPMEpSRnZQUUdMVzBvTCtEck5mT1hZeTRDeXl5NGdFUU9vdmJpNVJ3PT0.gif)
+
+#### 个人信息页面
+![](http://imglf5.nosdn.127.net/img/ZHkxOW9FR3pkWXV2c2FPMEpSRnZQUXZpcE9tVnRrQTlUenAvMmZtOFFMRmx0ZTdDeFZxZEd3PT0.png)

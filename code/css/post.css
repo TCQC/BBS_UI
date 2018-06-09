@@ -13,6 +13,7 @@ body {
     clear: both;
 }
 .main {
+    padding: 0 20px;
     background-color: #fff;
     width: 750px;
     border-radius: 4px 0 0 4px;
@@ -148,7 +149,7 @@ body {
 }
 .am-form-group {
     background-color: #fafafa;
-    padding: 10px 10px 10px 64px;
+    padding: 10px 10px 10px 10px;
 }
 
 .am-form-group textarea {
@@ -156,10 +157,22 @@ body {
     color: #666666;
 }
 
-.am-form-group>div {
+.am-form-group .buttons {
     display: none;
     margin-top: 10px;
     text-align: right;
+}
+
+#rep-button {
+    margin-top: 10px;
+    float: right;
+}
+.cmt-group {
+    padding: 0 20px;
+    background-color: #fff;
+}
+#rep-button #btn-cmt {
+    border-radius: 4px;
 }
 .am-btn-xs {
     margin-left: 10px;
@@ -168,3 +181,14 @@ body {
     border-radius: 4px;
 }
 
+#btn-cmt {
+    width: 76px;
+}
+
+.ta-cmt, .ta {
+    resize: none;
+}
+
+.bottom {
+    padding-bottom: 40px;
+}

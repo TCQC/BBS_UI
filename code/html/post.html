@@ -184,10 +184,10 @@
                     <!--每个评论后面跟回复框-->
                     <div class="am-form">
                         <div class="am-form-group">
-                            <textarea class="ta" rows="1" placeholder="回复一下..."></textarea>
-                            <div id="buttons">
-                                <button class="am-btn am-btn-success am-btn-xs" id="pub">发表</button>
-                                <button class="am-btn am-btn-default am-btn-xs" id="cancel">取消</button>
+                            <textarea class="ta" placeholder="回复一下..."></textarea>
+                            <div class="buttons">
+                                <button class="am-btn am-btn-success am-btn-xs pub">发表</button>
+                                <button class="am-btn am-btn-default am-btn-xs cancel">取消</button>
                             </div>
                         </div>
                     </div>
@@ -215,18 +215,40 @@
                             </div> <!-- 评论内容 -->
                         </div>
                     </article>
+
+                    <div class="am-form">
+                        <div class="am-form-group">
+                            <textarea class="ta" placeholder="回复一下..."></textarea>
+                            <div class="buttons">
+                                <button class="am-btn am-btn-success am-btn-xs pub">发表</button>
+                                <button class="am-btn am-btn-default am-btn-xs cancel">取消</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
             </div>
 
-            <!--评论区域-->
-            <div class="cmt-unlogin">
-                <p>要回复问题请先
-                    <a href="">登录</a>
-                    或
-                    <a href="">注册</a>
-                </p>
+            <!--未登录的评论区域-->
+            <!--<div class="cmt-unlogin">-->
+            <!--<p>要回复问题请先-->
+            <!--<a href="">登录</a>-->
+            <!--或-->
+            <!--<a href="">注册</a>-->
+            <!--</p>-->
+            <!--</div>-->
+
+            <!--已登录的评论区域-->
+            <div class="am-form bottom">
+                <div class="am-form-group cmt-group">
+                    <textarea class="ta-cmt" rows="6" placeholder="评论一下..."></textarea>
+                    <div id="rep-button">
+                        <button class="am-btn am-btn-success am-btn-sm" id="btn-cmt">评论</button>
+                    </div>
+                </div>
             </div>
         </div>
+
         <div class="info">
             <div class="sponsor">
                 <h3>发起人</h3>

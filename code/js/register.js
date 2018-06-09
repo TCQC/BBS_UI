@@ -69,7 +69,7 @@ function checkAll() {
 
         $.ajax({
                 url: "https://192.168.43.217:8080/user/id/7",
-                dataType: "jsonp",
+                dataType: "json",
                 async: true,
                 type: "GET",
                 success: function (data) {

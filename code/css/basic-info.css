@@ -1,0 +1,97 @@
+body {
+    background-color: #f0f0f0;
+}
+
+.container {
+    padding-bottom: 60px;
+    background-color: #fff;
+    width: 1000px;
+    margin: 60px auto;
+}
+
+.container .title {
+    padding: 20px 20px;
+    color: #333333;
+    width: 100%;
+}
+
+.container .title span {
+    margin-left: 10px;
+}
+.container .main {
+    width: 100%;
+    padding: 0 20px;
+}
+
+.main .body>div {
+    float: left;
+}
+
+.main .body:after {
+    display: block;
+    clear: both;
+    content: "";
+}
+
+.main .body .info {
+    padding-left: 20px;
+}
+
+.body .info>div {
+    font-size: 14px;
+    color: #666666;
+    margin-top: 18px;
+}
+
+.body .info input[type="text"] {
+    width: 280px;
+    height: 30px;
+    border: 1px solid #cccccc;
+    border-radius: 2px;
+    padding: 4px 10px;
+}
+
+.info #input-work {
+    width: 252px;
+}
+
+.img {
+    margin: 20px 0 0 120px;
+}
+
+.img:after {
+    display: block;
+    content: "";
+    clear: both;
+}
+
+.img>div {
+    float: left;
+}
+.img .left img {
+    width: 100px;
+    height: 100px;
+    border-radius: 4px;
+}
+
+.img .right {
+    color: #666666;
+    margin-left: 20px;
+}
+
+.img .right p {
+    margin-top: 4px;
+}
+.img .right .am-form-file {
+    margin-top: 10px;
+}
+
+.pub {
+    text-align: right;
+    width: 100%;
+}
+
+.pub button {
+    width: 100px;
+    margin: 40px 30px 0 0;
+}
