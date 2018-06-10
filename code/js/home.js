@@ -1,4 +1,5 @@
 $(function () {
+    checkLogin();
     toggle();
 });
 
@@ -10,5 +11,9 @@ function toggle() {
         $lis.removeClass("select");
         $(this).addClass("select");
     })
+}
+
+function checkLogin() {
+    console.log(sessionStorage.user);
 }
 
