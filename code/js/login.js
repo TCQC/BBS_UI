@@ -40,7 +40,32 @@ function checkAll() {
         return false;
     } else {
         //ajax submit
-        window.location.href = "index.html";
+        var email = $("#email").val();
+        var pass = $("#pass").val();
+
+        $.ajax({
+            url: "http://localhost:8080/user/login",
+            dataType: "json",
+            async: true,
+            type: "post",
+            data: {
+                "username": email,
+                "password": pass
+            },
+            success: function (res) {
+
+                if(res.status){
+                    sessionStorage.user = JSON.stringify(res.data);
+                    console.log(sessionStorage.user);
+                    window.location.href = "../index.html";
+                } else {
+                    setError(res.message);
+                }
+            }
+        });
+
+
+
     }
 }
 //clear error info
@@ -52,3 +77,21 @@ function restore() {
 function setError(info) {
     $(".err").text(info);
 }
+
+
+// var username = $('#username').val();
+// var password = $('#password').val();
+// $.ajax({
+//     url: 'http://localhost:8080/admin/login',
+//     dataType: 'json',
+//     // contentType: 'application/x-www-form-urlencoded',
+//     async: true,
+//     type: 'POST',
+//     data: {
+//         'username': username,
+//         'password': password
+//     },
+//     success: function (result) {
+//         sessionStorage.user = JSON.stringify(result.data);
+//         window.location.href = './index.html';
+//     },

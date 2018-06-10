@@ -68,20 +68,27 @@ function checkAll() {
         var pass = $("#pass").val();
 
         $.ajax({
-                url: "https://192.168.43.217:8080/user/id/7",
+                url: "http://localhost:8080/user/register",
                 dataType: "json",
                 async: true,
-                type: "GET",
-                success: function (data) {
-                    console.log(data);
+                type: "post",
+                data: {
+                    "nickname": nickname,
+                    "username": email,
+                    "password": pass
                 },
-                error: function (xhr) {
-                    alert(xhr.status);
-                }
+                success: function (res) {
+                    if(res.status){
+                        okStyle();
+                        regOk();
+                    } else {
+                        setError(res.message);
+                    }
+                },
             }
         );
 
-        // okStyle();
+
         // regOk();
     }
 }
@@ -105,10 +112,10 @@ function okStyle() {
 function regOk() {
     setTimeout(regOk, 1000);
     if (time > 0) {
-        var info = "注册成功，" + time + "s后跳转首页";
+        var info = "注册成功，" + time + "s后跳转登陆界面";
         setError(info);
         time--;
     } else {
-        window.location.href = "index.html";
+        window.location.href = "login.html";
     }
 }
