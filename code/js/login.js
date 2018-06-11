@@ -7,8 +7,8 @@ $(function () {
 });
 
 function checkEmail() {
-    var flag;
-    var email = $("#email").val();
+    let flag;
+    let email = $("#email").val();
 
     if(email === ""){
         setError("请输入邮箱！");
@@ -25,7 +25,7 @@ function checkEmail() {
 //check whether pass is empty
 function checkPass() {
 
-    var flag = true;
+    let flag = true;
 
     if($("#pass").val() === ""){
         flag = false;
@@ -40,8 +40,8 @@ function checkAll() {
         return false;
     } else {
         //ajax submit
-        var email = $("#email").val();
-        var pass = $("#pass").val();
+        let email = $("#email").val();
+        let pass = $("#pass").val();
 
         $.ajax({
             url: "http://localhost:8080/user/login",

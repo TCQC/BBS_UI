@@ -5,7 +5,7 @@ $(function () {
 
 function toggle() {
 
-    var $lis = $(".tabs li");
+    let $lis = $(".tabs li");
 
     $lis.click(function () {
         $lis.removeClass("select");
