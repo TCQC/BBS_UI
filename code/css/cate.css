@@ -3,8 +3,11 @@ body {
 }
 
 .container {
+    border-radius: 4px;
+    border: 1px solid #e6e6e6;
     width: 1000px;
     margin: 60px auto;
+    background-color: #fff;
 }
 
 .container:after {
@@ -13,10 +16,7 @@ body {
     clear: both;
 }
 .main {
-    background-color: #fff;
     width: 750px;
-    border-radius: 4px 0 0 4px;
-    border: 1px solid #e6e6e6;
     float: left;
 }
 
@@ -119,10 +119,7 @@ body {
     float: left;
     padding: 20px 10px 20px 30px;
     box-sizing: border-box;
-    background-color: #fff;
-    border: 1px solid #e6e6e6;
-    border-radius: 0 4px 4px 0;
-    border-left: none;
+    border-left: 1px solid #e6e6e6;
 }
 
 .info div {

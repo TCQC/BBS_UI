@@ -2,13 +2,24 @@ body {
     background-color: #f0f0f0;
 }
 
-.main {
+.container {
     background-color: #fff;
     width: 1000px;
     margin: 60px auto;
-    border-radius: 4px 0 0 4px;
+    border-radius: 4px;
     border: 1px solid #e6e6e6;
     padding: 20px 0 60px 0;
+}
+
+.container:after {
+    display: block;
+    content: '';
+    clear: both;
+}
+.container .main {
+    width: 750px;
+    float: left;
+    border-right: 1px solid #e6e6e6;
 }
 
 .main .top {
@@ -70,24 +81,80 @@ body {
     color: #333333;
 }
 
-.content .item {
+.post-item, .rep-item , .info-item {
     margin-top: 14px;
     padding-bottom: 10px;
     border-bottom: 1px solid #e6e6e6;
 }
 
-.content .item a {
+.post-item a, .rep-item a {
     font-size: 15px;
     color: #155faa;
 }
 
-.content .item a:hover {
+.post-item a:hover, .rep-item a:hover {
     color: #499ef3;
 }
 
-.content .item p {
+.post-item p, .rep-item p {
     margin-top: 8px;
     color: #666666;
     font-size: 13px;
 }
 
+.info-item>div {
+    padding: 15px 0;
+    font-size: 15px;
+    color: #444444;
+    border-bottom: 1px dashed #e6e6e6;
+}
+
+.info-item>div>span {
+    color: #666666;
+    font-size: 14px;
+}
+
+.info {
+    width: 248px;
+    float: left;
+    padding: 20px 10px 20px 30px;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+
+.info>div {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.info>div>h3 {
+    color: #333333;
+    margin-bottom: 8px;
+}
+
+.info .function a span {
+    margin-right: 15px;
+}
+.info .function a {
+    display: block;
+    width: 100%;
+    padding-left: 10px;
+    line-height: 30px;
+    color: #666;
+    font-size: 14px;
+    border-radius: 4px;
+}
+
+.info .function a:hover {
+    background-color: #f5f5f5;
+}
+
+.info .relative li {
+    line-height: 18px;
+    margin-top: 8px;
+}
+
+.info .relative li a {
+    font-size: 13px;
+}

@@ -38,10 +38,10 @@ function getBlockInfo() {
 //todo 版块头像未更新，版主信息未加载，版主主页待设置
 function genBlock(id, name, imgLoc, catN, postN, time) {
     return $("<div class=item>" +
-        "<a href=html/block.html&id=" + id +">" +
+        "<a href=html/block.html?id=" + id +">" +
         "<img src=" + imgLoc + ">" +
         "</a>" +
-        "<span><a href=html/block.html&id="+id +">" + name + "</a></span>" +
+        "<span><a href=html/block.html?id="+id +">" + name + "</a></span>" +
         "<p>共有<span>"+ catN +"</span>个分类，<span>" + postN + "</span>个帖子 &nbsp;版主：<a class=block-admin href=#>团子</a></p>" +
         "<p>上次更新 <span>"+ time +"</span></p>\n" +
         "</div>" );

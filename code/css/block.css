@@ -38,8 +38,11 @@ body {
 }
 
 .container {
+    background-color: #fff;
     width: 1000px;
     margin: 20px auto;
+    border-radius: 4px;
+    border: 1px solid #e6e6e6;
 }
 
 .container:after {
@@ -50,9 +53,6 @@ body {
 .main {
     background-color: #fff;
     width: 750px;
-    /*height: 500px;*/
-    border-radius: 4px 0 0 4px;
-    border: 1px solid #e6e6e6;
     float: left;
 }
 
@@ -150,9 +150,7 @@ body {
     padding: 20px 10px 20px 30px;
     box-sizing: border-box;
     background-color: #fff;
-    border: 1px solid #e6e6e6;
-    border-radius: 0 4px 4px 0;
-    border-left: none;
+    border-left: 1px solid #e6e6e6;
 }
 
 .info>div {
