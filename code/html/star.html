@@ -63,10 +63,25 @@
             </div>
             <div class="star">
                 <ul>
-                    <li class="select">默认收藏</li>
-                    <li>收藏1</li>
+                    <li class="select folder">默认收藏</li>
+                    <li class="folder">收藏1</li>
                 </ul>
-                <button class="am-btn am-btn-xs am-btn-success am-radius">添加收藏</button>
+                <button class="am-btn am-btn-xs am-btn-success am-radius" id="add">添加收藏</button>
+            </div>
+
+            <!--添加收藏的模态框-->
+            <div class="am-modal am-modal-prompt" tabindex="-1" id="add-folder">
+                <div class="am-modal-dialog">
+                    <div class="am-modal-hd">TCQC-BBS</div>
+                    <div class="am-modal-bd">
+                        请输入新建收藏夹的名称：
+                        <input type="text" class="am-modal-prompt-input">
+                    </div>
+                    <div class="am-modal-footer">
+                        <span class="am-modal-btn" data-am-modal-cancel>取消</span>
+                        <span class="am-modal-btn" data-am-modal-confirm>提交</span>
+                    </div>
+                </div>
             </div>
 
             <div class="star-list">

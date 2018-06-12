@@ -81,7 +81,43 @@
         <div class="main">
             <div class="title">
                 <h1>这是一个标题，关于文章主题的一个简要描述，如果标题输的太长会怎么样呢,经过测试，显然不会怎么样</h1>
-                <button class="am-btn am-btn-success am-radius">收藏 • <span>5</span></button>
+                <button class="am-btn am-btn-success am-radius star" id="star-btn">收藏</button>
+                <button class="am-btn am-btn-default am-radius star" id="unstar-btn">取消收藏</button>
+            </div>
+
+
+            <!--模态框-->
+            <div class="am-modal am-modal-prompt" tabindex="-1" id="my-prompt-star">
+                <div class="am-modal-dialog">
+                    <div class="am-modal-hd">TCQC-BBS</div>
+                    <div class="am-modal-bd">
+                        选择你的收藏夹
+                        <select data-am-selected class="am-modal-prompt-input">
+                            <option value="x">默认收藏夹</option>
+                            <option value="a">收藏夹1</option>
+                            <option value="b">收藏夹2</option>
+                        </select>
+                    </div>
+                    <div class="am-modal-footer">
+                        <span class="am-modal-btn" data-am-modal-cancel>取消</span>
+                        <span class="am-modal-btn" data-am-modal-confirm>提交</span>
+                    </div>
+                </div>
+            </div>
+
+
+            <!--模态框-->
+            <div class="am-modal am-modal-confirm" tabindex="-1" id="my-confirm-unstar">
+                <div class="am-modal-dialog">
+                    <div class="am-modal-hd">TCQC-BBS</div>
+                    <div class="am-modal-bd">
+                        你确定要取消收藏吗？
+                    </div>
+                    <div class="am-modal-footer">
+                        <span class="am-modal-btn" data-am-modal-cancel>取消</span>
+                        <span class="am-modal-btn" data-am-modal-confirm>确定</span>
+                    </div>
+                </div>
             </div>
 
             <!--文章主体-->
@@ -289,6 +325,8 @@
     <div class="footer">
         Copyright © 2018, <a href="https://github.com/TCQC">TCQC</a> All Rights Reserved
     </div>
+
+
 
 </body>
 </html>
