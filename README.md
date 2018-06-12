@@ -37,5 +37,19 @@
 #### 发帖编辑页面
 ![](http://imglf5.nosdn.127.net/img/ZHkxOW9FR3pkWXV2c2FPMEpSRnZQUUdMVzBvTCtEck5mT1hZeTRDeXl5NGdFUU9vdmJpNVJ3PT0.gif)
 
-#### 个人信息页面
+#### 个人信息修改页面
 ![](http://imglf5.nosdn.127.net/img/ZHkxOW9FR3pkWXV2c2FPMEpSRnZQUXZpcE9tVnRrQTlUenAvMmZtOFFMRmx0ZTdDeFZxZEd3PT0.png)
+
+#### 个人主页
+- 下面的信息是要点击相关tab才会显示，这里一起给出来
+- 右边功能菜单，异帐号访问不显示，同帐号访问显示
+![](http://imglf3.nosdn.127.net/img/ZHkxOW9FR3pkWXZtdmgvTnkwWTU4cDhuNnp3V1phUndkZnpyWkpTaGN1OVRSYjBld1hZSU1BPT0.png)
+
+#### 收藏页面
+- 灰色的是收藏夹，点击不同收藏夹，下面内容会更新
+![](http://imglf3.nosdn.127.net/img/ZHkxOW9FR3pkWXZtdmgvTnkwWTU4aG52V1g1Vyt6ekdyRzRkS2JaUmh0UXU4dURqMTY3N2NBPT0.gif)
+
+#### 私信列表及对话页面
+- 还缺一个我方输入框，这都是小问题
+- 私信列表的标题是最后一次聊天的内容，能实现不？
+![](http://imglf5.nosdn.127.net/img/ZHkxOW9FR3pkWXZtdmgvTnkwWTU4dm1ZQnN6VVMxQThmRUZQNXlwSVB1QnBLN0N4VUVXVitRPT0.gif)

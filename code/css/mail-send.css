@@ -1,0 +1,141 @@
+body {
+    background-color: #f0f0f0;
+}
+
+.container {
+    width: 1000px;
+    background-color: #fff;
+    margin: 60px auto;
+    border-radius: 4px;
+    border: 1px solid #e6e6e6;
+}
+
+.container:after {
+    display: block;
+    content: "";
+    clear: both;
+}
+
+.main {
+    width: 750px;
+    float: left;
+}
+
+.main .title {
+    width: 100%;
+    height: 60px;
+    padding: 0 20px;
+    position: relative;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.main .title h2{
+    color: #333333;
+    line-height: 60px;
+}
+
+.msg-list li {
+    position: relative;
+    padding: 15px 60px;
+}
+
+.msg-list li img {
+    position: absolute;
+    border-radius:4px;
+    left: 18px;
+    top: 15px;
+    width: 32px;
+    height: 32px;
+}
+
+.msg-list .item{
+    background: #f5fafe;
+    border: 1px solid #dcecf9;
+    border-radius: 4px;
+    position: relative;
+    padding: 12px 15px;
+}
+
+.msg-list .item .content {
+    font-size: 14px;
+    color: #666666;
+}
+
+.msg-list .item .content .user {
+    color: #155faa;
+}
+
+.msg-list .item .time {
+    margin-top: 8px;
+    font-size: 12px;
+    color: #999999;
+}
+
+
+
+.info {
+    width: 248px;
+    float: left;
+    padding: 20px 10px 20px 30px;
+    box-sizing: border-box;
+    background-color: #fff;
+    border-left: 1px solid #e6e6e6;
+}
+
+.info>div {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.info>div>h3 {
+    color: #333333;
+    margin-bottom: 8px;
+}
+
+.info .function a span {
+    margin-right: 15px;
+}
+.info .function a {
+    display: block;
+    width: 100%;
+    padding-left: 10px;
+    line-height: 30px;
+    color: #666;
+    font-size: 14px;
+    border-radius: 4px;
+}
+
+.info .function a:hover {
+    background-color: #f5f5f5;
+}
+
+.info .relative li {
+    line-height: 18px;
+    margin-top: 8px;
+}
+
+.info .relative li a {
+    font-size: 13px;
+}
+
+.post-item {
+    margin-top: 14px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.post-item a {
+    font-size: 15px;
+    color: #155faa;
+}
+
+.post-item a:hover {
+    color: #499ef3;
+}
+
+.post-item p {
+    margin-top: 8px;
+    color: #666666;
+    font-size: 13px;
+}
