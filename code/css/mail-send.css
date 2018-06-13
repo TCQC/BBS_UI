@@ -19,6 +19,7 @@ body {
 .main {
     width: 750px;
     float: left;
+    border-right: 1px solid #e6e6e6;
 }
 
 .main .title {
@@ -48,7 +49,7 @@ body {
     height: 32px;
 }
 
-.msg-list .item{
+.msg-list .item, .item-rep {
     background: #f5fafe;
     border: 1px solid #dcecf9;
     border-radius: 4px;
@@ -56,21 +57,48 @@ body {
     padding: 12px 15px;
 }
 
-.msg-list .item .content {
+.msg-list .item-rep {
+    background-color: #fcf7fe;
+}
+.msg-list .content {
     font-size: 14px;
     color: #666666;
 }
 
-.msg-list .item .content .user {
+.msg-list .content .user {
     color: #155faa;
 }
 
-.msg-list .item .time {
+.msg-list .time {
     margin-top: 8px;
     font-size: 12px;
     color: #999999;
 }
 
+.main .reply {
+    position: relative;
+    margin-top: 20px;
+    padding: 0 60px;
+}
+
+.main .reply .ta-cmt {
+    resize: none;
+    border-radius: 4px;
+}
+
+.main .reply #rep-button {
+    margin-top: 20px;
+    text-align: right;
+}
+
+.main .reply img {
+    position: absolute;
+    border-radius: 4px;
+    width: 32px;
+    height: 32px;
+    top: 0;
+    right: 18px;
+}
 
 
 .info {
@@ -79,7 +107,6 @@ body {
     padding: 20px 10px 20px 30px;
     box-sizing: border-box;
     background-color: #fff;
-    border-left: 1px solid #e6e6e6;
 }
 
 .info>div {
