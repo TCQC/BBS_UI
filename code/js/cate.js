@@ -1,5 +1,5 @@
 $(function () {
-    alert(getRequest("id"));
+
 });
 
 

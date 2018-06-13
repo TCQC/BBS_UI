@@ -13,52 +13,61 @@
 <body>
 
     <div class="header">
-        <header class="am-topbar am-topbar-inverse in">
-            <h1 class="am-topbar-brand">
-                <a href="../index.html">TCQC-BBS</a>
-            </h1>
-            <div class="am-collapse am-topbar-collapse" id="doc-topbar-collapse">
+    <header class="am-topbar am-topbar-inverse in">
+        <h1 class="am-topbar-brand">
+            <a href="../index.html">TCQC-BBS</a>
+        </h1>
+        <div class="am-collapse am-topbar-collapse" id="doc-topbar-collapse">
 
-                <div class="search am-topbar-left">
-                    <div>
-                        <input type="text" placeholder="话题或问题">
-                        <span class="am-icon-search"></span>
-                    </div>
-                </div>
-
-
-                <!--登录成功后用户模块-->
-                <div class="am-topbar-right" id="user">
-                    <div class="am-dropdown" data-am-dropdown="{boundary: '.am-topbar'}">
-                        <!--<button class="am-btn am-btn-secondary am-topbar-btn am-btn-sm am-dropdown-toggle" data-am-dropdown-toggle>-->
-                        <!--<img src="http://ask.amazeui.org/uploads/avatar/000/00/59/45_avatar_mid.jpg">-->
-                        <!--</button>-->
-                        <img src="http://ask.amazeui.org/uploads/avatar/000/00/59/45_avatar_mid.jpg" class="am-dropdown-toggle">
-                        <ul class="am-dropdown-content">
-                            <li><a href="#"><span class="am-icon-home myicon"></span>主页</a></li>
-                            <li><a href="#"><span class="am-icon-envelope myicon"></span>私信</a></li>
-                            <li><a href="#"><span class="am-icon-cog myicon"></span>设置</a></li>
-                            <li><a href="#"><span class="am-icon-power-off myicon"></span>退出</a></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!--登录成功后的发帖功能-->
-                <div class="am-topbar-right">
-                    <div class="am-dropdown" data-am-dropdown="{boundary: '.am-topbar'}">
-                        <button class="am-btn am-btn-secondary am-topbar-btn am-btn-sm am-dropdown-toggle">
-                            发布 <span class="am-icon-caret-down"></span>
-                        </button>
-                        <ul class="am-dropdown-content">
-                            <li><a href="#">发帖</a></li>
-                            <li><a href="#">提问</a></li>
-                        </ul>
-                    </div>
-                </div>
-
+            <div class="search am-topbar-left">
+                <input type="text" placeholder="话题或问题">
+                <span class="am-icon-search"></span>
             </div>
-        </header>
-    </div>
+
+            <!--注册以及管理员登录-->
+            <div class="am-topbar-right header-unlogin">
+                <a href="../html/register.html">
+                    <button class="am-btn am-btn-primary am-topbar-btn am-btn-sm">注册</button>
+                </a>
+            </div>
+
+            <!--普通用户登录-->
+            <div class="am-topbar-right header-unlogin">
+                <a href="../html/login.html">
+                    <button class="am-btn am-btn-primary am-topbar-btn am-btn-sm">登录</button>
+                </a>
+            </div>
+
+            <!--登录成功后用户模块-->
+            <div class="am-topbar-right header-login" id="user">
+                <div class="am-dropdown" data-am-dropdown="{boundary: '.am-topbar'}">
+
+                    <img src="../img/avatar.png" class="am-dropdown-toggle">
+                    <ul class="am-dropdown-content">
+                        <li><a href="#"><span class="am-icon-home myicon"></span>主页</a></li>
+                        <li><a href="#"><span class="am-icon-cog myicon"></span>设置</a></li>
+                        <li class="admin"><a href="#"><span class="am-icon-user-secret myicon"></span>版块管理</a></li>
+                        <li><a href="#"><span class="am-icon-power-off myicon"></span>退出</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!--登录成功后的发帖功能-->
+            <div class="am-topbar-right header-login">
+                <div class="am-dropdown" data-am-dropdown="{boundary: '.am-topbar'}">
+                    <button class="am-btn am-btn-secondary am-topbar-btn am-btn-sm am-dropdown-toggle">
+                        发布 <span class="am-icon-caret-down"></span>
+                    </button>
+                    <ul class="am-dropdown-content">
+                        <li><a href="#">发帖</a></li>
+                        <li><a href="#">提问</a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </header>
+</div>
 
     <div class="container">
         <div class="main">

@@ -9,7 +9,7 @@ function checkLogin() {
     let $unLogin = $(".header-unlogin");
 
     //存在用户信息，说明已经登陆
-    if(sessionStorage.user !== ""){
+    if(sessionStorage.user !== " "){
         $login.css({ display: "" });
         $unLogin.css({ display: "none" });
     } else {
