@@ -3,8 +3,11 @@ body {
 }
 
 .container {
+    background-color: #fff;
     width: 1000px;
     margin: 60px auto;
+    border-radius: 4px 0 0 4px;
+    border: 1px solid #e6e6e6;
 }
 
 .container:after {
@@ -15,9 +18,8 @@ body {
 .main {
     padding: 0 20px;
     background-color: #fff;
+    border-right: 1px solid #e6e6e6;
     width: 750px;
-    border-radius: 4px 0 0 4px;
-    border: 1px solid #e6e6e6;
     float: left;
 }
 .main .title {
@@ -105,9 +107,6 @@ body {
     padding: 20px 15px 20px 25px;
     box-sizing: border-box;
     background-color: #fff;
-    border: 1px solid #e6e6e6;
-    border-radius: 0 4px 4px 0;
-    border-left: none;
 }
 
 .info>div {

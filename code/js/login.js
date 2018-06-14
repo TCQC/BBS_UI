@@ -56,8 +56,6 @@ function checkAll() {
 
                 if(res.status){
                     sessionStorage.user = JSON.stringify(res.data);
-                    console.log(sessionStorage.user);
-                    alert("ddddd");
                     window.location.href = "../index.html";
                 } else {
                     setError(res.message);
@@ -75,21 +73,3 @@ function restore() {
 function setError(info) {
     $(".err").text(info);
 }
-
-
-// var username = $('#username').val();
-// var password = $('#password').val();
-// $.ajax({
-//     url: 'http://localhost:8080/admin/login',
-//     dataType: 'json',
-//     // contentType: 'application/x-www-form-urlencoded',
-//     async: true,
-//     type: 'POST',
-//     data: {
-//         'username': username,
-//         'password': password
-//     },
-//     success: function (result) {
-//         sessionStorage.user = JSON.stringify(result.data);
-//         window.location.href = './index.html';
-//     },

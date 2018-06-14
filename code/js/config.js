@@ -119,7 +119,9 @@ function update() {
         },
         success: function (res) {
             if (res.status) {
-                alert("修改个人信息成功");
+                sessionStorage.user = JSON.stringify(res.data);
+
+                $("#my-alert").modal({});
             }
         },
         error: function (xhr) {

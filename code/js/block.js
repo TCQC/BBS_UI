@@ -89,10 +89,13 @@ function genPost(id, img, title, status, nickname, uid, n1, n2, time) {
 
     var add = "";
     if(status === 2){
-        add = "<span class='am-badge am-badge-danger am-round'>置顶</span>";
+        add = "<span class='am-badge am-badge-success am-round'>精</span>";
     }
     if(status === 3){
-        add = "<span class='am-badge am-badge-danger am-round'>置顶</span>" +
+        add = "<span class='am-badge am-badge-danger am-round'>置顶</span>";
+    }
+    if(status === 4){
+        add = "<span class='am-badge am-badge-danger am-round'>置顶</span>&nbsp;&nbsp;" +
             "<span class='am-badge am-badge-success am-round'>精</span>";
     }
 

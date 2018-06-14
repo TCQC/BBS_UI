@@ -85,9 +85,6 @@
                     <div class="am-modal-bd">
                         选择你的收藏夹
                         <select data-am-selected class="am-modal-prompt-input">
-                            <option value="x">默认收藏夹</option>
-                            <option value="a">收藏夹1</option>
-                            <option value="b">收藏夹2</option>
                         </select>
                     </div>
                     <div class="am-modal-footer">
@@ -96,7 +93,6 @@
                     </div>
                 </div>
             </div>
-
 
             <!--模态框-->
             <div class="am-modal am-modal-confirm" tabindex="-1" id="my-confirm-unstar">
@@ -130,135 +126,16 @@
                 <h2>评论列表</h2>
             </div>
 
-            <div class="comt-list">
-                <div class="comt">
-                    <!--评论在这里-->
-                    <article class="am-comment"> <!-- 评论容器 -->
-                        <!-- 评论者头像 -->
-                        <a href="">
-                            <img class="am-comment-avatar" src="http://ask.amazeui.org/uploads/avatar/000/00/02/25_avatar_mid.jpg"> <!-- 评论者头像 -->
-                        </a>
-
-                        <div class="am-comment-main">
-                            <header class="am-comment-hd">
-                                <div class="am-comment-meta">
-                                    <a href="#" class="am-comment-author">团子</a> <!-- 评论者 -->
-                                    评论于 <time datetime="">2018-06-06 20:01</time> <!--time-->
-                                    <a href="#" class="reptag">回复</a>
-                                </div>
-                            </header>
-
-                            <div class="am-comment-bd">
-                                妙哉啊，这是评论（一级回复）,而且是我是话唠，写了很多东西，测试下排版会发生什么变化，然而并不会发生什么变化，前端牛逼！
-                                66666666666666666666666666666666666666666666阿三地方经济阿发发骚发酵粉萨福
-                            </div> <!-- 评论内容 -->
-                        </div>
-                    </article>
-
-                    <!--回复在这里-->
-                    <div class="reply">
-                        <article class="am-comment"> <!-- 评论容器 -->
-                            <!-- 评论者头像 -->
-                            <a href="">
-                                <img class="am-comment-avatar" src="http://ask.amazeui.org/uploads/avatar/000/00/02/25_avatar_mid.jpg"> <!-- 评论者头像 -->
-                            </a>
-
-                            <div class="am-comment-main">
-                                <header class="am-comment-hd">
-                                    <div class="am-comment-meta">
-                                        <a href="#" class="am-comment-author">鸡王</a> <!-- 评论者 -->
-                                        回复于 <time datetime="">2018-06-06 20:01</time> <!--time-->
-                                        <a href="#" class="reptag">回复</a>
-                                    </div>
-                                </header>
-
-                                <div class="am-comment-bd">
-                                    <span class="at">@团子</span>妙哉啊，这是评论（二级回复）,而且是我是话唠，写了很多东西，测试下排版会发生什么变化，然而并不会发生什么变化，前端牛逼！
-                                    233333333333333333
-                                </div> <!-- 评论内容 -->
-                            </div>
-                        </article>
-                    </div>
-
-                    <div class="reply">
-                        <article class="am-comment"> <!-- 评论容器 -->
-                            <!-- 评论者头像 -->
-                            <a href="">
-                                <img class="am-comment-avatar" src="http://ask.amazeui.org/uploads/avatar/000/00/02/25_avatar_mid.jpg"> <!-- 评论者头像 -->
-                            </a>
-
-                            <div class="am-comment-main">
-                                <header class="am-comment-hd">
-                                    <div class="am-comment-meta">
-                                        <a href="#" class="am-comment-author">鸡王</a> <!-- 评论者 -->
-                                        回复于 <time datetime="">2018-06-06 20:01</time> <!--time-->
-                                        <a href="#" class="reptag">回复</a>
-                                    </div>
-                                </header>
-
-                                <div class="am-comment-bd">
-                                    <span class="at">@鸡王</span>傻不拉鸡王
-                                </div> <!-- 评论内容 -->
-                            </div>
-                        </article>
-                    </div>
-
-                    <!--每个评论后面跟回复框-->
-                    <div class="am-form">
-                        <div class="am-form-group">
-                            <textarea class="ta" placeholder="回复一下..."></textarea>
-                            <div class="buttons">
-                                <button class="am-btn am-btn-success am-btn-xs pub">发表</button>
-                                <button class="am-btn am-btn-default am-btn-xs cancel">取消</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!--第二个测试评论-->
-                <div class="comt">
-                    <article class="am-comment"> <!-- 评论容器 -->
-                        <!-- 评论者头像 -->
-                        <a href="">
-                            <img class="am-comment-avatar" src="http://ask.amazeui.org/uploads/avatar/000/00/02/25_avatar_mid.jpg"> <!-- 评论者头像 -->
-                        </a>
-
-                        <div class="am-comment-main">
-                            <header class="am-comment-hd">
-                                <div class="am-comment-meta">
-                                    <a href="#" class="am-comment-author">田宇琛</a> <!-- 评论者 -->
-                                    评论于 <time datetime="">2018-06-06 20:01</time> <!--time-->
-                                    <a href="#" class="reptag">回复</a>
-                                </div>
-                            </header>
-
-                            <div class="am-comment-bd">
-                                我只想说在坐的各位都是垃圾
-                            </div> <!-- 评论内容 -->
-                        </div>
-                    </article>
-
-                    <div class="am-form">
-                        <div class="am-form-group">
-                            <textarea class="ta" placeholder="回复一下..."></textarea>
-                            <div class="buttons">
-                                <button class="am-btn am-btn-success am-btn-xs pub">发表</button>
-                                <button class="am-btn am-btn-default am-btn-xs cancel">取消</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
+            <div class="comt-list"></div>
 
             <!--未登录的评论区域-->
-            <!--<div class="cmt-unlogin">-->
-            <!--<p>要回复问题请先-->
-            <!--<a href="">登录</a>-->
-            <!--或-->
-            <!--<a href="">注册</a>-->
-            <!--</p>-->
-            <!--</div>-->
+            <div class="cmt-unlogin">
+            <p>要回复问题请先
+            <a href="login.html" target="_blank">登录</a>
+            或
+            <a href="register.html" target="_blank">注册</a>
+            </p>
+            </div>
 
             <!--已登录的评论区域-->
             <div class="am-form bottom">
@@ -276,7 +153,7 @@
                 <h3>发起人</h3>
                 <div>
                     <img src="" alt="">
-                    <a href="#"></a>
+                    <a href="#" target="_blank"></a>
                 </div>
             </div>
             <div class="relative">

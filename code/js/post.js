@@ -1,5 +1,4 @@
-var $prefix;
-
+var $prefix = "";
 $(function () {
     getPostInfo();
     starButton();
@@ -8,80 +7,184 @@ $(function () {
 
 //initial method to start all functions on comment
 function comment() {
+    //全部进行事件委托
+    if(typeof (sessionStorage.user))
+    let user = ;
 
-    $(".ta").focus(function () {
+    $(".main").delegate(".ta", "focus", function () {
         $(this).parent(".am-form-group").children(".buttons").css("display" ,"block");
     });
 
-    $(".cancel").click(function () {
+    //cancel event
+    $(".main").delegate(".cancel", "click", function () {
         $(this).parents(".am-form-group").children(".buttons").css("display" ,"none");
         $(this).parents(".am-form-group").children(".ta").val("");
+        $prefix = "";
     });
 
-    $(".pub").click(function () {
+
+    //单击pub后的事件
+    $(".main").delegate(".pub", "click", function () {
         var $buttons = $(this).parents(".am-form-group").children(".buttons");
         var $ta = $(this).parents(".am-form-group").children(".ta");
-        $.ajax({
+        let $xx = $(this).parents(".login");
+        let content = $prefix + $ta.val().substr($ta.val().lastIndexOf("•") + 1);
+        let cid = $(this).parents(".comt").children(".am-comment")[0].id;
 
+        $.ajax({
+            url: "http://localhost:8080/reply",
+            // dataType: "json",
+            method: "post",
+            async: true,
+            data: {
+                "userId": user.id,
+                "commentId": cid,
+                "content": content
+            },
+            success: function (res) {
+                if(res.status) {
+                    let $aRep = genRep(user.id, user.avatar, user.nickname, "刚刚", content);
+                    $xx.before($aRep);
+                    $buttons.css("display" ,"none");
+                }
+            },
+            error: function (x) {
+                console.log(x.status);
+            }
         });
-        $buttons.css("display" ,"none");
+
+        //clear cache
         $ta.val("");
+        $prefix = "";
+    });
+
+    $(".bottom").on("click", function () {
+        let cotent = $(".ta-cmt")[0].value;
+
+        if(cotent !== ""){
+            //ajax
+            $.ajax({
+                url: "http://localhost:8080/comment",
+                method: "post",
+                dataType: "json",
+                data: {
+                    "userId": user.id,
+                    "postId": getRequest("id"),
+                    "content": cotent
+                },
+                success: function (res) {
+                    //let commentLi = genCmt(getRequest("id"), user.id, user.);
+                },
+                error:function (x) {
+                    console.log(x.status);
+                }
+            });
+
+
+
+        }
     });
 
 
     //事件委托，让后来加入的回复也具有绑定事件
-    $(".comt-list").delegate(".reptag", "click", function () {
+    $(".main").delegate(".reptag", "click", function () {
         //找到要at谁
-        var atWhom = "@" + $(this).parent(".am-comment-meta").children(".am-comment-author").text() + " ";
+        var atWhom = "@" + $(this).parent(".am-comment-meta").children(".am-comment-author").text() + "• ";
 
         //找到对应的评论区
         var $ta = $(this).parents(".comt").children(".am-form").children(".am-form-group").children(".ta");
 
         var prompt = $ta.val() + atWhom;
         //用于从存数据库
-        $prefix = "<span>" + prompt +"</span>";
+        $prefix = "<span class=at>" + prompt +"</span>";
 
         //显示在界面上
         $ta.val(prompt);
         return false;
-    })
+    });
 }
 
 function starButton() {
 
-    //todo 检测用户是否登陆，未登陆，按钮不给予显示
-    //todo 通过ajax查询帖子是否被收藏，根据结果来显示按钮样式
-    star();
+    //用户登录后来操作收藏功能
+    if(typeof (sessionStorage.user) !== "undefined"){
 
-    $('#star-btn').click(function () {
-        $('#my-prompt-star').modal({
-            relatedTarget: this,
+        //检测用户是否已经收藏了这个帖子
+        //todo 通过ajax查询帖子是否被收藏，根据结果来显示按钮样式
+        $.ajax({
 
-            onConfirm: function (e) {
-                //todo 获得所选分类的id值，结合帖子的id进行ajax操作，收藏帖子
-
-                //改变按钮的样式
-                unstar();   //变为未收藏
-            },
-            onCancel: function () {
-            }
         });
-    });
 
-    $("#unstar-btn").click(function () {
+        star();
 
-        $('#my-confirm-unstar').modal({
-            relatedTarget: this,
-            onConfirm: function() {
+        $('#star-btn').click(function () {
+            // 获得所选分类的id值，结合帖子的id进行ajax操作，收藏帖子
+            var user = JSON.parse(sessionStorage.user);
 
-                //改变按钮的样式
-                star();
-            },
-            // closeOnConfirm: false,
-            onCancel: function() {
-            }
+            $.ajax({
+                url: "http://localhost:8080/favorite/user/" + 18,
+                method: "get",
+                dataType: "json",
+                success: function (res) {
+                    $(".am-modal-prompt-input").empty();
+                    $.each(res.data, function () {
+                        let $option = $("<option value=" + this.id + ">" + this.name + "</option>");
+                        $(".am-modal-prompt-input").append($option);
+                    })
+                }
+            });
+
+            //弹出模态框，进行文件夹的选择
+
+            $('#my-prompt-star').modal({
+                relatedTarget: this,
+
+                onConfirm: function (e) {
+
+                    $.ajax({
+                        url: "http://localhost:8080/star",
+                        method: "post",
+                        dataType: "json",
+                        data: {
+                            "favoriteId": e.data,
+                            "postId": getRequest("id")
+                        },
+                        success: function (res) {
+                            console.log(res);
+                            unstar();   //改变按钮的样式,变为未收藏
+                        },
+                    });
+
+                },
+                onCancel: function () {
+                }
+            });
         });
-    });
+
+        //点击取消收藏后的模态框
+        $("#unstar-btn").click(function () {
+
+            $('#my-confirm-unstar').modal({
+                relatedTarget: this,
+                onConfirm: function() {
+                    // todo
+                    $.ajax({
+                        url: "http://localhost:8080/star/user/" + 18 + "postId/"  ,
+                        dataType: "json",
+                        data: {
+
+                        }
+                    });
+                    //改变按钮的样式
+                    star();
+                },
+                onCancel: function() {
+                }
+            });
+        });
+    }
+
+
 }
 
 function getPostInfo() {
@@ -104,9 +207,23 @@ function getPostInfo() {
                 $(".info .sponsor a").text(res.data.userInfo.nickname);
 
                 //添加评论和对应的回复
-                $(".comt-list").append("<div class=comt><div>");
-                var aCommt = res.data.comments[0];
-                //$("comt-list").append(genCmt(aCommt.));
+                let start = "<div class=comt>";
+                let end = "<div>";
+                let repArea = genRepArea();
+
+                $.each(res.data.comments, function () {
+                    let cmtAndRep = genCmt(this.id, this.userInfo.id, this.userInfo.avatar, this.userInfo.nickname, this.updateTime, this.content);
+
+                    //对所有评论进行操作
+                    let rplist = "";
+                    $.each(this.replies, function (){
+                        rplist += genRep(this.userInfo.id, this.userInfo.avatar, this.userInfo.nickname, this.updateTime, this.content);
+                    });
+
+                    $(".comt-list").append(start + cmtAndRep + rplist + repArea + end);
+                });
+
+                checkRepArea();
             }
 
         }
@@ -135,23 +252,65 @@ function getRequest(name) {
     if (r!=null) return unescape(r[2]); return null; //返回参数值
 }
 
-function genCmt(uid, uimg, nickname, time ,content) {
-    return "<article class=am-comment>\n" +
-        "                        <a href=home.html?id=>" + uid + "\n" +
+function genCmt(cid, uid, uimg, nickname, time ,content) {
+    return "<article class=am-comment id=" + cid + ">" +
+        "                        <a href=home.html?id=" + uid + " target=_blank" + ">\n" +
         "                            <img class=am-comment-avatar src=" + uimg + ">" +
         "                        </a>\n" +
         "                        <div class=am-comment-main>\n" +
         "                            <header class=am-comment-hd>\n" +
         "                                <div class=am-comment-meta>\n" +
-        "                                    <a href=home.html?id=" + uid + "class=am-comment-author>" + nickname + "</a> \n" +
+        "                                    <a href=home.html?id=" + uid + " class=am-comment-author target=_blank>" + nickname + "</a> \n" +
         "                                    评论于 <time>" + time + "</time> \n" +
         "                                    <a href=# class=reptag>回复</a>\n" +
         "                                </div>\n" +
         "                            </header>\n" +
-        "                            <div class=\"am-comment-bd\">" + content + "</div>\n" +
+        "                            <div class=am-comment-bd>" + content + "</div>\n" +
         "                        </div>\n" +
         "                    </article>";
 }
 
+function genRepArea() {
+    return "<div class='am-form login'>\n" +
+        "                        <div class=am-form-group>\n" +
+        "                            <textarea class=ta placeholder=回复一下... rows=1></textarea>\n" +
+        "                            <div class=buttons>\n" +
+        "                                <button class=\"am-btn am-btn-success am-btn-xs pub\">发表</button>\n" +
+        "                                <button class=\"am-btn am-btn-default am-btn-xs cancel\">取消</button>\n" +
+        "                            </div>\n" +
+        "                        </div>\n" +
+        "                    </div>";
+}
 
+function genRep(uid, uimg, nickname, time, content) {
+    return "<div class=reply>" +
+        "                  <article class=am-comment>\n" +
+        "                        <a href=home.html?id=" + uid + " target=_blank" + ">\n" +
+        "                            <img class=am-comment-avatar src=" + uimg + ">" +
+        "                        </a>\n" +
+        "                        <div class=am-comment-main>\n" +
+        "                            <header class=am-comment-hd>\n" +
+        "                                <div class=am-comment-meta>\n" +
+        "                                    <a href=home.html?id=" + uid + " class=am-comment-author target=_blank>" + nickname + "</a> \n" +
+        "                                    回复于 <time>" + time + "</time> \n" +
+        "                                    <a href=# class=reptag>回复</a>\n" +
+        "                                </div>\n" +
+        "                            </header>\n" +
+        "                            <div class=am-comment-bd>" + content + "</div>\n" +
+        "                        </div>\n" +
+        "                    </article>" +
+        "                </div>";
+}
 
+function checkRepArea() {
+
+    if(typeof (sessionStorage.user) === "undefined"){
+        $(".bottom").css({ display: "none" });
+        $(".cmt-unlogin").css({display: ""});
+        $(".login").css({display: "none"});
+        unLogin();  //不显示收藏
+    } else {
+        $(".bottom").css({ display: "" });
+        $(".cmt-unlogin").css({display: "none"});
+    }
+}
