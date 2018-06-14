@@ -1,7 +1,12 @@
 var $prefix = "";
 $(function () {
+    //加载帖子的基本信息，评论回复等等
     getPostInfo();
+
+    //根据用户登陆状态决定显示的功能接口，是startButton函数的先决条件
     starButton();
+
+    //确定所有的功能
     comment();
 });
 
@@ -83,7 +88,6 @@ function comment() {
         }
     });
 
-
     //事件委托，让后来加入的回复也具有绑定事件
     $(".main").delegate(".reptag", "click", function () {
         //找到要at谁
@@ -105,7 +109,7 @@ function comment() {
 function starButton() {
 
     //用户登录后来操作收藏功能
-    if(sessionStorage.user !== "undefined"){
+    if(sessionStorage.user){
         let user = sessionStorage.user;
         var tid;
 
@@ -191,9 +195,7 @@ function starButton() {
                 }
             });
         });
-    }
-
-
+    }//end if
 }
 
 function getPostInfo() {
@@ -313,7 +315,7 @@ function genRep(uid, uimg, nickname, time, content) {
 
 function checkRepArea() {
 
-    if(sessionStorage.user === "undefined"){
+    if(!sessionStorage.user){
         $(".bottom").css({ display: "none" });
         $(".cmt-unlogin").css({display: ""});
         $(".login").css({display: "none"});

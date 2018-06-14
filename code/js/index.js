@@ -10,7 +10,7 @@ function checkLogin() {
     let $unLogin = $(".header-unlogin");
 
     //存在用户信息，说明已经登陆
-    if(sessionStorage.user !== "undefined"){
+    if(sessionStorage.user){
         $login.css({ display: "" });
         $unLogin.css({ display: "none" });
         addTou();
@@ -37,7 +37,6 @@ function getBlockInfo() {
     });
 }
 
-//todo 版块头像未更新，版主信息未加载，版主主页待设置
 function genBlock(id, name, imgLoc, catN, postN, time, admin, uid) {
     return $("<div class=item>" +
         "<a href=html/block.html?id=" + id +">" +
@@ -51,7 +50,7 @@ function genBlock(id, name, imgLoc, catN, postN, time, admin, uid) {
 
 function logOut() {
     $("#logout").click(function () {
-        sessionStorage.user = undefined;
+        sessionStorage.clear();
     })
 }
 
