@@ -57,15 +57,13 @@ function checkAll() {
                 if(res.status){
                     sessionStorage.user = JSON.stringify(res.data);
                     console.log(sessionStorage.user);
+                    alert("ddddd");
                     window.location.href = "../index.html";
                 } else {
                     setError(res.message);
                 }
             }
         });
-
-
-
     }
 }
 //clear error info

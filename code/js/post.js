@@ -1,8 +1,9 @@
 var $prefix;
 
 $(function () {
-    comment();
+    getPostInfo();
     starButton();
+    comment();
 });
 
 //initial method to start all functions on comment
@@ -83,6 +84,35 @@ function starButton() {
     });
 }
 
+function getPostInfo() {
+    $.ajax({
+        url: "http://localhost:8080/post/id/" + getRequest("id"),
+        method: "get",
+        dataType: "json",
+        success: function (res) {
+            if(res.status){
+
+                //修改了帖子的基本信息
+                $(".main .title h1").text(res.data.title);
+                $(".article p").text(res.data.content);
+                $(".status .time").text(res.data.updateTime);
+                $(".status #comt-count").text("" + res.data.comments.length);
+
+                //添加发起人的基本信息
+                $(".info .sponsor img").attr("src", res.data.userInfo.avatar);
+                $(".info .sponsor a").attr("href", "home.html?id=" + res.data.userInfo.id);
+                $(".info .sponsor a").text(res.data.userInfo.nickname);
+
+                //添加评论和对应的回复
+                $(".comt-list").append("<div class=comt><div>");
+                var aCommt = res.data.comments[0];
+                //$("comt-list").append(genCmt(aCommt.));
+            }
+
+        }
+    });
+}
+
 function star() {
     $("#star-btn").css({ display: "" });
     $("#unstar-btn").css({ display: "none" });
@@ -93,6 +123,35 @@ function unstar() {
     $("#unstar-btn").css({ display: "" });
 }
 
+function unLogin() {
+    $("#star-btn").css({ display: "none" });
+    $("#unstar-btn").css({ display: "none" });
+}
+
+//name:url中的变量值
+function getRequest(name) {
+    let reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+    let r = window.location.search.substr(1).match(reg);  //匹配目标参数
+    if (r!=null) return unescape(r[2]); return null; //返回参数值
+}
+
+function genCmt(uid, uimg, nickname, time ,content) {
+    return "<article class=am-comment>\n" +
+        "                        <a href=home.html?id=>" + uid + "\n" +
+        "                            <img class=am-comment-avatar src=" + uimg + ">" +
+        "                        </a>\n" +
+        "                        <div class=am-comment-main>\n" +
+        "                            <header class=am-comment-hd>\n" +
+        "                                <div class=am-comment-meta>\n" +
+        "                                    <a href=home.html?id=" + uid + "class=am-comment-author>" + nickname + "</a> \n" +
+        "                                    评论于 <time>" + time + "</time> \n" +
+        "                                    <a href=# class=reptag>回复</a>\n" +
+        "                                </div>\n" +
+        "                            </header>\n" +
+        "                            <div class=\"am-comment-bd\">" + content + "</div>\n" +
+        "                        </div>\n" +
+        "                    </article>";
+}
 
 
 

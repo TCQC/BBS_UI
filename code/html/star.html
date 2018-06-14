@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>我的收藏</title>
@@ -10,63 +11,81 @@
     <script src="../js/amazeui.min.js"></script>
     <script src="../js/star.js"></script>
 </head>
+
 <body>
     <div class="header">
-    <header class="am-topbar am-topbar-inverse in">
-        <h1 class="am-topbar-brand">
-            <a href="../index.html">TCQC-BBS</a>
-        </h1>
-        <div class="am-collapse am-topbar-collapse" id="doc-topbar-collapse">
+        <header class="am-topbar am-topbar-inverse in">
+            <h1 class="am-topbar-brand">
+                <a href="../index.html">TCQC-BBS</a>
+            </h1>
+            <div class="am-collapse am-topbar-collapse" id="doc-topbar-collapse">
 
-            <div class="search am-topbar-left">
-                <input type="text" placeholder="话题或问题">
-                <span class="am-icon-search"></span>
-            </div>
-
-            <!--注册以及管理员登录-->
-            <div class="am-topbar-right header-unlogin">
-                <a href="../html/register.html">
-                    <button class="am-btn am-btn-primary am-topbar-btn am-btn-sm">注册</button>
-                </a>
-            </div>
-
-            <!--普通用户登录-->
-            <div class="am-topbar-right header-unlogin">
-                <a href="../html/login.html">
-                    <button class="am-btn am-btn-primary am-topbar-btn am-btn-sm">登录</button>
-                </a>
-            </div>
-
-            <!--登录成功后用户模块-->
-            <div class="am-topbar-right header-login" id="user">
-                <div class="am-dropdown" data-am-dropdown="{boundary: '.am-topbar'}">
-
-                    <img src="../img/avatar.png" class="am-dropdown-toggle">
-                    <ul class="am-dropdown-content">
-                        <li><a href="#"><span class="am-icon-home myicon"></span>主页</a></li>
-                        <li><a href="#"><span class="am-icon-cog myicon"></span>设置</a></li>
-                        <li class="admin"><a href="#"><span class="am-icon-user-secret myicon"></span>版块管理</a></li>
-                        <li><a href="#"><span class="am-icon-power-off myicon"></span>退出</a></li>
-                    </ul>
+                <div class="search am-topbar-left">
+                    <input type="text" placeholder="话题或问题">
+                    <span class="am-icon-search"></span>
                 </div>
-            </div>
 
-            <!--登录成功后的发帖功能-->
-            <div class="am-topbar-right header-login">
-                <div class="am-dropdown" data-am-dropdown="{boundary: '.am-topbar'}">
-                    <button class="am-btn am-btn-secondary am-topbar-btn am-btn-sm am-dropdown-toggle">
-                        发布 <span class="am-icon-caret-down"></span>
-                    </button>
-                    <ul class="am-dropdown-content">
-                        <li><a href="#">发帖</a></li>
-                        <li><a href="#">提问</a></li>
-                    </ul>
+                <!--注册以及管理员登录-->
+                <div class="am-topbar-right header-unlogin">
+                    <a href="../html/register.html">
+                        <button class="am-btn am-btn-primary am-topbar-btn am-btn-sm">注册</button>
+                    </a>
                 </div>
-            </div>
 
-        </div>
-    </header>
-</div>
+                <!--普通用户登录-->
+                <div class="am-topbar-right header-unlogin">
+                    <a href="../html/login.html">
+                        <button class="am-btn am-btn-primary am-topbar-btn am-btn-sm">登录</button>
+                    </a>
+                </div>
+
+                <!--登录成功后用户模块-->
+                <div class="am-topbar-right header-login" id="user">
+                    <div class="am-dropdown" data-am-dropdown="{boundary: '.am-topbar'}">
+
+                        <img src="../img/avatar.png" class="am-dropdown-toggle">
+                        <ul class="am-dropdown-content">
+                            <li>
+                                <a href="#">
+                                    <span class="am-icon-home myicon"></span>主页</a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="am-icon-cog myicon"></span>设置</a>
+                            </li>
+                            <li class="admin">
+                                <a href="#">
+                                    <span class="am-icon-user-secret myicon"></span>版块管理</a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="am-icon-power-off myicon"></span>退出</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!--登录成功后的发帖功能-->
+                <div class="am-topbar-right header-login">
+                    <div class="am-dropdown" data-am-dropdown="{boundary: '.am-topbar'}">
+                        <button class="am-btn am-btn-secondary am-topbar-btn am-btn-sm am-dropdown-toggle">
+                            发布
+                            <span class="am-icon-caret-down"></span>
+                        </button>
+                        <ul class="am-dropdown-content">
+                            <li>
+                                <a href="#">发帖</a>
+                            </li>
+                            <li>
+                                <a href="#">提问</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </header>
+    </div>
 
     </div>
     <div class="container">
@@ -75,7 +94,7 @@
                 <h2>我的收藏</h2>
             </div>
             <div class="star">
-                <ul>
+                <ul id="favorites">
                     <li class="select folder">默认收藏</li>
                     <li class="folder">收藏1</li>
                 </ul>
@@ -88,16 +107,16 @@
                     <div class="am-modal-hd">TCQC-BBS</div>
                     <div class="am-modal-bd">
                         请输入新建收藏夹的名称：
-                        <input type="text" class="am-modal-prompt-input">
+                        <input id="input-favorite" type="text" class="am-modal-prompt-input">
                     </div>
                     <div class="am-modal-footer">
                         <span class="am-modal-btn" data-am-modal-cancel>取消</span>
-                        <span class="am-modal-btn" data-am-modal-confirm>提交</span>
+                        <span class="am-modal-btn" data-am-modal-confirm onclick="addFavorite()">提交</span>
                     </div>
                 </div>
             </div>
 
-            <div class="star-list">
+            <div class="star-list" id="star">
                 <div class="post-item">
                     <h4>
                         <a href="#">2016年度最受欢迎中国开源软件评选，投票有额外惊喜！</a>
@@ -131,15 +150,9 @@
             </div>
             <div class="relative">
                 <h3>推荐帖子</h3>
-                <ul>
+                <ul id="hot">
                     <li>
                         <a href="">相关帖子相关帖子相关帖子ddfdfdfdd中</a>
-                    </li>
-                    <li>
-                        <a href="">xxxxxxxxxxxxxx</a>
-                    </li>
-                    <li>
-                        <a href="">表单怎么实现手机号码验证？看了官方文档还是不懂那个js引入，求大神解释一下，在线等。。。。</a>
                     </li>
                 </ul>
             </div>
@@ -149,7 +162,9 @@
 
     <!--底部信息-->
     <div class="footer">
-        Copyright © 2018, <a href="https://github.com/TCQC">TCQC</a> All Rights Reserved
+        Copyright © 2018,
+        <a href="https://github.com/TCQC">TCQC</a> All Rights Reserved
     </div>
 </body>
+
 </html>

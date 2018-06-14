@@ -138,11 +138,6 @@ body {
     color: #155faa;
 }
 
-.post .reply {
-    margin-right: 20px;
-    float: right;
-}
-
 .info {
     width: 248px;
     height: 100%;
@@ -172,8 +167,25 @@ body {
 .icon img {
     margin-left: 25px;
     width: 150px;
+    height: 150px;
 }
 
+.info .adm {
+    width: 100%;
+    position: relative;
+}
 .adm img {
     margin-top: 10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+}
+
+.info .adm .adm-name {
+    top: 36px;
+    left: 50px;
+    font-size: 13px;
+    color: #0f9ae0;
+    position: absolute;
+
 }
