@@ -1,10 +1,11 @@
 //todo get id from sessionstorage
-var id = 18;
+var id;
+var select = -1;
 $(function () {
+    id = JSON.parse(sessionStorage.user).id;
     toggle();
     addFolder();
-    getUserFavorite(18);
-    getStar(6);
+    getUserFavorite(id);
     getHot();
 });
 
@@ -25,7 +26,6 @@ function addFolder() {
             relatedTarget: this,
             onConfirm: function (e) {
                 //todo add folder
-
                 let $newli = $("<li class='folder'>" + e.data + "</li>");
                 $(".star ul").append($newli);
             },
@@ -55,20 +55,27 @@ function updateFavorites(data) {
     $.each(data, function (index, item) {
         $('#favorites').append(
             $('<li>')
+            .attr('id', item.id)
             .attr('class', 'folder')
             .attr('onclick', 'getStar(' + item.id + ')')
             .append(item.name)
         )
     })
+    if (select == -1) {
+        select = data[0].id;
+    }
+    $('#' + select).attr('class', 'select folder');
+    getStar(select);
 }
 
 /**
  * 获取收藏夹下的收藏列表
  * @param {} id 
  */
-function getStar(id) {
+function getStar(starId) {
+    select = starId;
     $.ajax({
-        url: 'http://localhost:8080/post/favorite/' + id + '/page/1/id',
+        url: 'http://localhost:8080/post/favorite/' + starId + '/page/1/id',
         dataType: 'json',
         async: true,
         type: 'get',
