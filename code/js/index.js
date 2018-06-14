@@ -29,7 +29,7 @@ function getBlockInfo() {
         success: function (res) {
             if (res.status) {
                 $.each(res.data, function () {
-                    let $item = genBlock(this.id, this.name, this.icon, this.categorySum, this.postSum, this.updateTime);
+                    let $item = genBlock(this.id, this.name, this.icon, this.categorySum, this.postSum, this.updateTime, this.adminName, this.adminId);
                     $(".module").append($item);
                 });
             }
@@ -38,13 +38,13 @@ function getBlockInfo() {
 }
 
 //todo 版块头像未更新，版主信息未加载，版主主页待设置
-function genBlock(id, name, imgLoc, catN, postN, time) {
+function genBlock(id, name, imgLoc, catN, postN, time, admin, uid) {
     return $("<div class=item>" +
         "<a href=html/block.html?id=" + id +">" +
         "<img src=" + imgLoc + ">" +
         "</a>" +
         "<span><a href=html/block.html?id="+id +">" + name + "</a></span>" +
-        "<p>共有<span>"+ catN +"</span>个分类，<span>" + postN + "</span>个帖子 &nbsp;版主：<a class=block-admin href=#>团子</a></p>" +
+        "<p>共有<span>"+ catN +"</span>个分类，<span>" + postN + "</span>个帖子 &nbsp;版主：<a class=block-admin href=html/home.html?id=" + uid + ">" + admin +"</a></p>" +
         "<p>上次更新 <span>"+ time +"</span></p>\n" +
         "</div>" );
 }
@@ -59,4 +59,3 @@ function addTou() {
     let user = JSON.parse(sessionStorage.user);
     $("#usr-avt").attr("src", user.avatar);
 }
-
