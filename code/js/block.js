@@ -101,7 +101,7 @@ function genPost(id, img, title, status, nickname, uid, n1, n2, time) {
 
     return $("<div class=post>\n" +
         "                    <a href=home.html?id=" + uid + ">\n" +
-        "                        <img src=img>\n" +
+        "                        <img src=" + img + ">" +
         "                    </a>\n" +
         "                    <div class=content>\n" +
         "                        <h4>\n" +
@@ -111,7 +111,7 @@ function genPost(id, img, title, status, nickname, uid, n1, n2, time) {
         "                    </div>\n" +
         "                    <div class=description>\n" +
         "                        <span class=user><a href=home.html?id=" + uid + ">" + nickname + "</a></span> 发布了贴子\n" +
-        "                        • <span>" + n1 +"</span> 人回复\n" +
+        "                        • <span>" + n1 +"</span> 人评论\n" +
         "                        • <span>" + n2 +"</span> 个收藏\n" +
         "                        • 最后更新：<span>" + time + "</span>\n" +
         "                    </div>\n" +

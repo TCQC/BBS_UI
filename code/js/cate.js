@@ -70,7 +70,7 @@ function genPost(id, img, title, status, nickname, uid, n1, n2, time) {
 
     return $("<div class=post>\n" +
         "                    <a href=home.html?id=" + uid + ">\n" +
-        "                        <img src=img>\n" +
+        "                        <img src=" + img + ">" + 
         "                    </a>\n" +
         "                    <div class=content>\n" +
         "                        <h4>\n" +

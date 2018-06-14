@@ -8,8 +8,7 @@ $(function () {
 //initial method to start all functions on comment
 function comment() {
     //全部进行事件委托
-    if(typeof (sessionStorage.user))
-    let user = ;
+    let user = JSON.parse(sessionStorage.user);
 
     $(".main").delegate(".ta", "focus", function () {
         $(this).parent(".am-form-group").children(".buttons").css("display" ,"block");
@@ -21,7 +20,6 @@ function comment() {
         $(this).parents(".am-form-group").children(".ta").val("");
         $prefix = "";
     });
-
 
     //单击pub后的事件
     $(".main").delegate(".pub", "click", function () {
@@ -58,10 +56,11 @@ function comment() {
         $prefix = "";
     });
 
-    $(".bottom").on("click", function () {
-        let cotent = $(".ta-cmt")[0].value;
+    //评论事件
+    $("#btn-cmt").on("click", function () {
+        let content = $(".ta-cmt")[0].value;
 
-        if(cotent !== ""){
+        if(content !== ""){
             //ajax
             $.ajax({
                 url: "http://localhost:8080/comment",
@@ -70,18 +69,17 @@ function comment() {
                 data: {
                     "userId": user.id,
                     "postId": getRequest("id"),
-                    "content": cotent
+                    "content": content
                 },
                 success: function (res) {
-                    //let commentLi = genCmt(getRequest("id"), user.id, user.);
+                    let $commentLi = genCmt(getRequest("id"), user.id, user.avatar, user.nickname, "刚刚评论",content);
+                    $(".comt-list").append($commentLi);
+
                 },
                 error:function (x) {
                     console.log(x.status);
                 }
             });
-
-
-
         }
     });
 
@@ -108,10 +106,14 @@ function starButton() {
 
     //用户登录后来操作收藏功能
     if(typeof (sessionStorage.user) !== "undefined"){
+        let user = sessionStorage.user;
 
         //检测用户是否已经收藏了这个帖子
         //todo 通过ajax查询帖子是否被收藏，根据结果来显示按钮样式
         $.ajax({
+            url: "http://localhost:8080/star/" + user.id + "/" + getRequest("id"),
+            method: "post",
+            dataType: "json",
 
         });
 
