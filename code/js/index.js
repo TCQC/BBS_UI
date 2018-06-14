@@ -1,5 +1,6 @@
 $(function () {
     checkLogin();
+    logOut();
     getBlockInfo();
 });
 
@@ -9,9 +10,10 @@ function checkLogin() {
     let $unLogin = $(".header-unlogin");
 
     //存在用户信息，说明已经登陆
-    if(sessionStorage.user !== " "){
+    if(sessionStorage.user !== "undefined"){
         $login.css({ display: "" });
         $unLogin.css({ display: "none" });
+        addTou();
     } else {
         $login.css({ display: "none" });
         $unLogin.css({ display: "" });
@@ -45,5 +47,16 @@ function genBlock(id, name, imgLoc, catN, postN, time) {
         "<p>共有<span>"+ catN +"</span>个分类，<span>" + postN + "</span>个帖子 &nbsp;版主：<a class=block-admin href=#>团子</a></p>" +
         "<p>上次更新 <span>"+ time +"</span></p>\n" +
         "</div>" );
+}
+
+function logOut() {
+    $("#logout").click(function () {
+        sessionStorage.user = undefined;
+    })
+}
+
+function addTou() {
+    let user = JSON.parse(sessionStorage.user);
+    $("#usr-avt").attr("src", user.avatar);
 }
 

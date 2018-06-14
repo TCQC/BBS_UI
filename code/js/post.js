@@ -105,26 +105,33 @@ function comment() {
 function starButton() {
 
     //用户登录后来操作收藏功能
-    if(typeof (sessionStorage.user) !== "undefined"){
+    if(sessionStorage.user !== "undefined"){
         let user = sessionStorage.user;
+        var tid;
 
         //检测用户是否已经收藏了这个帖子
-        //todo 通过ajax查询帖子是否被收藏，根据结果来显示按钮样式
+        //通过ajax查询帖子是否被收藏，根据结果来显示按钮样式
         $.ajax({
-            url: "http://localhost:8080/star/" + user.id + "/" + getRequest("id"),
+            url: "http://localhost:8080/star/check/" + user.id + "/" + getRequest("id"),
             method: "post",
             dataType: "json",
-
+            success: function (res) {
+                if(res.status){
+                    //说明用户已经收藏了这个帖子
+                    tid = res.data.id;  //存下这个id号，用来取消收藏之用
+                    unstar();
+                } else {
+                    star();
+                }
+            }
         });
-
-        star();
 
         $('#star-btn').click(function () {
             // 获得所选分类的id值，结合帖子的id进行ajax操作，收藏帖子
             var user = JSON.parse(sessionStorage.user);
 
             $.ajax({
-                url: "http://localhost:8080/favorite/user/" + 18,
+                url: "http://localhost:8080/favorite/user/" + user.id,
                 method: "get",
                 dataType: "json",
                 success: function (res) {
@@ -137,7 +144,6 @@ function starButton() {
             });
 
             //弹出模态框，进行文件夹的选择
-
             $('#my-prompt-star').modal({
                 relatedTarget: this,
 
@@ -171,10 +177,11 @@ function starButton() {
                 onConfirm: function() {
                     // todo
                     $.ajax({
-                        url: "http://localhost:8080/star/user/" + 18 + "postId/"  ,
+                        url: "http://localhost:8080/star/id/" + tid,
                         dataType: "json",
-                        data: {
-
+                        type: "delete",
+                        success: function () {
+                            //
                         }
                     });
                     //改变按钮的样式
@@ -306,7 +313,7 @@ function genRep(uid, uimg, nickname, time, content) {
 
 function checkRepArea() {
 
-    if(typeof (sessionStorage.user) === "undefined"){
+    if(sessionStorage.user === "undefined"){
         $(".bottom").css({ display: "none" });
         $(".cmt-unlogin").css({display: ""});
         $(".login").css({display: "none"});
