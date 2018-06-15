@@ -16,64 +16,86 @@
 <body>
 
     <div class="header">
-    <header class="am-topbar am-topbar-inverse in">
-        <h1 class="am-topbar-brand">
-            <a href="../index.html">TCQC-BBS</a>
-        </h1>
-        <div class="am-collapse am-topbar-collapse" id="doc-topbar-collapse">
+        <header class="am-topbar am-topbar-inverse in">
+            <h1 class="am-topbar-brand">
+                <a href="../index.html">TCQC-BBS</a>
+            </h1>
+            <div class="am-collapse am-topbar-collapse" id="doc-topbar-collapse">
 
-            <div class="search am-topbar-left">
-                <input type="text" placeholder="话题或问题">
-                <span class="am-icon-search"></span>
-            </div>
-
-            <!--注册以及管理员登录-->
-            <div class="am-topbar-right header-unlogin">
-                <a href="register.html">
-                    <button class="am-btn am-btn-primary am-topbar-btn am-btn-sm">注册</button>
-                </a>
-            </div>
-
-            <!--普通用户登录-->
-            <div class="am-topbar-right header-unlogin">
-                <a href="login.html">
-                    <button class="am-btn am-btn-primary am-topbar-btn am-btn-sm">登录</button>
-                </a>
-            </div>
-
-            <!--登录成功后用户模块-->
-            <div class="am-topbar-right header-login" id="user">
-                <div class="am-dropdown" data-am-dropdown="{boundary: '.am-topbar'}">
-
-                    <img src="" class="am-dropdown-toggle" id="usr-avt">
-                    <ul class="am-dropdown-content">
-                        <li><a href= home.html><span class="am-icon-home myicon"></span>主页</a></li>
-                        <li><a href="mail.html"><span class="am-icon-envelope myicon"></span>私信</a></li>
-                        <li><a href="star.html"><span class="am-icon-star myicon"></span>收藏</a></li>
-                        <li><a href="config.html"><span class="am-icon-cog myicon"></span>设置</a></li>
-                        <li class="admin"><a href="admin.html"><span class="am-icon-user-secret myicon"></span>版块管理</a></li>
-                        <li><a href="../index.html" id="logout"><span class="am-icon-power-off myicon"></span>退出</a></li>
-                    </ul>
+                <div class="search am-topbar-left">
+                    <input type="text" placeholder="话题或问题">
+                    <span class="am-icon-search"></span>
                 </div>
-            </div>
 
-            <!--登录成功后的发帖功能-->
-            <div class="am-topbar-right header-login">
-                <div class="am-dropdown" data-am-dropdown="{boundary: '.am-topbar'}">
-                    <button class="am-btn am-btn-secondary am-topbar-btn am-btn-sm am-dropdown-toggle">
-                        发布 <span class="am-icon-caret-down"></span>
-                    </button>
-                    <ul class="am-dropdown-content">
-                        <li><a href="send.html">发帖</a></li>
-                        <li><a href="send.html">提问</a></li>
-                    </ul>
+                <!--注册以及管理员登录-->
+                <div class="am-topbar-right header-unlogin">
+                    <a href="register.html">
+                        <button class="am-btn am-btn-primary am-topbar-btn am-btn-sm">注册</button>
+                    </a>
                 </div>
+
+                <!--普通用户登录-->
+                <div class="am-topbar-right header-unlogin">
+                    <a href="login.html">
+                        <button class="am-btn am-btn-primary am-topbar-btn am-btn-sm">登录</button>
+                    </a>
+                </div>
+
+                <!--登录成功后用户模块-->
+                <div class="am-topbar-right header-login" id="user">
+                    <div class="am-dropdown" data-am-dropdown="{boundary: '.am-topbar'}">
+
+                        <img src="" class="am-dropdown-toggle" id="usr-avt">
+                        <ul class="am-dropdown-content">
+                            <li>
+                                <a href=h ome.html>
+                                    <span class="am-icon-home myicon"></span>主页</a>
+                            </li>
+                            <li>
+                                <a href="mail.html">
+                                    <span class="am-icon-envelope myicon"></span>私信</a>
+                            </li>
+                            <li>
+                                <a href="star.html">
+                                    <span class="am-icon-star myicon"></span>收藏</a>
+                            </li>
+                            <li>
+                                <a href="config.html">
+                                    <span class="am-icon-cog myicon"></span>设置</a>
+                            </li>
+                            <li class="admin">
+                                <a href="admin.html">
+                                    <span class="am-icon-user-secret myicon"></span>版块管理</a>
+                            </li>
+                            <li>
+                                <a href="../index.html" id="logout">
+                                    <span class="am-icon-power-off myicon"></span>退出</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!--登录成功后的发帖功能-->
+                <div class="am-topbar-right header-login">
+                    <div class="am-dropdown" data-am-dropdown="{boundary: '.am-topbar'}">
+                        <button class="am-btn am-btn-secondary am-topbar-btn am-btn-sm am-dropdown-toggle">
+                            发布
+                            <span class="am-icon-caret-down"></span>
+                        </button>
+                        <ul class="am-dropdown-content">
+                            <li>
+                                <a href="send.html">发帖</a>
+                            </li>
+                            <li>
+                                <a href="send.html">提问</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
             </div>
-
-        </div>
-    </header>
-</div>
-
+        </header>
+    </div>
     <div class="container">
         <div class="title">
             <h2>
