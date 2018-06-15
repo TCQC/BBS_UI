@@ -110,7 +110,7 @@ function starButton() {
 
     //用户登录后来操作收藏功能
     if(sessionStorage.user){
-        let user = sessionStorage.user;
+        let user = JSON.parse(sessionStorage.user);
         var tid;
 
         //检测用户是否已经收藏了这个帖子

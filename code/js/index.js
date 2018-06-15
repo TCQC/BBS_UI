@@ -10,7 +10,7 @@ function checkLogin() {
     let $unLogin = $(".header-unlogin");
 
     //存在用户信息，说明已经登陆
-    if (sessionStorage.user !== "undefined") {
+    if (sessionStorage.user) {
         $login.css({
             display: ""
         });
