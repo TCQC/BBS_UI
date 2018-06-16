@@ -18,7 +18,8 @@ $.ajax({
 //获得我方id
 if(sessionStorage.user){
     var usr = JSON.parse(sessionStorage.user);
-}
+    $(".reply img").attr("src", usr.avatar);
+
 
 $(function () {
     $("#btn-cmt").click(msgRep);
