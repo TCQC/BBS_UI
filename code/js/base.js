@@ -1,6 +1,7 @@
 $(function () {
     checkLogin();
     logOut();
+    home();
 });
 
 //修改头部的信息
@@ -29,4 +30,12 @@ function logOut() {
 function addTou() {
     let user = JSON.parse(sessionStorage.user);
     $("#usr-avt").attr("src", user.avatar);
+}
+
+function home() {
+    $("#user ul li:first a").on("click", function () {
+        let uid = JSON.parse(sessionStorage.user).id;
+        window.location.href = "home.html?id=" + uid;
+        return false;
+    });
 }

@@ -2,6 +2,7 @@ $(function () {
     checkLogin();
     logOut();
     getBlockInfo();
+    home();
 });
 
 function checkLogin() {
@@ -69,4 +70,12 @@ function logOut() {
 function addTou() {
     let user = JSON.parse(sessionStorage.user);
     $('#usr-avt').attr('src', user.avatar);
+}
+
+function home() {
+    $("#user ul li:first a").on("click", function () {
+        let uid = JSON.parse(sessionStorage.user).id;
+        window.location.href = "html/home.html?id=" + uid;
+        return false;
+    });
 }
