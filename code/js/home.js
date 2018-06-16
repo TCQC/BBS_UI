@@ -130,7 +130,7 @@ function genInfo(gender, email, place, time, rank) {
 }
 
 function basicInfo() {
-    
+
     $.ajax({
         url: "http://localhost:8080/user/id/" + uid,
         method: "get",

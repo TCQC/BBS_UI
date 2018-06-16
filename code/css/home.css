@@ -31,6 +31,8 @@ body {
 }
 
 .main .top img {
+    width: 100px;
+    height: 100px;
     left: 20px;
     top: 0;
     position: absolute;
