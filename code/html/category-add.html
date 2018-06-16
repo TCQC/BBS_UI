@@ -11,11 +11,11 @@
   <link rel="stylesheet" href="../css/amazeui.datatables.min.css" />
   <link rel="stylesheet" href="../css/app.css">
   <script src="../js/jquery-3.3.1.min.js"></script>
-  <script src="../js/admin.js"></script>
+  <script src="../js/category-add.js"></script>
 
 </head>
 
-<body data-type="widgets">
+<body data-color="theme-white" data-type="widgets">
   <script src="../js/theme.js"></script>
   <div class="am-g tpl-g">
     <!-- 头部 -->
@@ -26,21 +26,9 @@
           <img src="../img/logo.png" alt="">
         </a>
       </div>
-      <!-- 右侧内容 -->
-      <div class="tpl-header-fluid">
-        <!-- 侧边切换 -->
-        <div class="am-fl tpl-header-switch-button am-icon-list">
-          <span>
+      <!-- 头部 -->
+      <header>
 
-          </span>
-        </div>
-        <!-- 搜索 -->
-        <div class="am-fl tpl-header-search">
-          <form class="tpl-header-search-form" action="javascript:;">
-            <button class="tpl-header-search-btn am-icon-search"></button>
-            <input class="tpl-header-search-box" type="text" placeholder="搜索内容...">
-          </form>
-        </div>
         <!-- 其它功能-->
         <div class="am-fr tpl-header-navbar">
           <ul>
@@ -59,142 +47,107 @@
             </li>
           </ul>
         </div>
-      </div>
+      </header>
+  </div>
 
-    </header>
-    <!-- 风格切换 -->
-    <div class="tpl-skiner">
-      <div class="tpl-skiner-toggle am-icon-cog">
-      </div>
-      <div class="tpl-skiner-content">
-        <div class="tpl-skiner-content-title">
-          选择主题
+
+  <!-- 侧边导航栏 -->
+  <div class="left-sidebar">
+    <div class="tpl-sidebar-user-panel">
+      <div class="tpl-user-panel-slide-toggleable">
+        <div class="tpl-user-panel-profile-picture">
+          <img id="avatar" src="../img/user04.png" alt="">
         </div>
-        <div class="tpl-skiner-content-bar">
-          <span class="skiner-color skiner-white" data-color="theme-white"></span>
-          <span class="skiner-color skiner-black" data-color="theme-black"></span>
-        </div>
+        <span class="user-panel-logged-in-text">
+          <div id="nickname2"></div>
+        </span>
       </div>
     </div>
-    <!-- 侧边导航栏 -->
-    <div class="left-sidebar">
-      <div class="tpl-sidebar-user-panel">
-        <div class="tpl-user-panel-slide-toggleable">
-          <div class="tpl-user-panel-profile-picture">
-            <img id="avatar" src="" alt="">
-          </div>
-          <span class="user-panel-logged-in-text">
-            <div id="nickname2"></div>
-          </span>
-        </div>
-      </div>
 
-      <!-- 菜单 -->
-      <ul class="sidebar-nav">
-        <li class="sidebar-nav-link">
-          <a href="index.html" class="active">
-            <i class="am-icon-home sidebar-nav-link-logo"></i> 首页
-          </a>
-        </li>
-        <li class="sidebar-nav-link">
-          <a href="user-list.html">
-            <i class="am-icon-bar-chart sidebar-nav-link-logo"></i> 用户列表
-          </a>
-        </li>
-        <li class="sidebar-nav-link">
-          <a href="post-list.html">
-            <i class="am-icon-table sidebar-nav-link-logo"></i> 帖子列表
-          </a>
-        </li>
+    <!-- 菜单 -->
+    <ul class="sidebar-nav">
 
-        <li class="sidebar-nav-link">
-          <a href="javascript:;" class="sidebar-nav-sub-title">
-            <i class="am-icon-reorder sidebar-nav-link-logo"></i> 版块管理
-            <span class="am-icon-chevron-down am-fr am-margin-right-sm sidebar-nav-sub-ico"></span>
-          </a>
-          <ul class="sidebar-nav sidebar-nav-sub">
-            <li class="sidebar-nav-link">
-              <a href="block-list.html">
-                <span class="am-icon-angle-right sidebar-nav-link-logo"></span>
-                版块列表
-              </a>
-            </li>
-            <li class="sidebar-nav-link">
-              <a href="category-list.html">
-                <span class="am-icon-angle-right sidebar-nav-link-logo"></span>
-                分类列表
-              </a>
-            </li>
-          </ul>
-        </li>
-      </ul>
-    </div>
-
-    <!-- 内容区域 -->
-    <div class="tpl-content-wrapper">
+      <li class="sidebar-nav-link">
+        <a href="admin.html">
+          <i class="am-icon-table sidebar-nav-link-logo"></i> 帖子列表
+        </a>
+      </li>
+      <li class="sidebar-nav-link">
+        <a href="category-list.html" class="active">
+          <i class="am-icon-table sidebar-nav-link-logo"></i> 分类列表
+        </a>
+      </li>
+    </ul>
+  </div>
 
 
-      <div class="row-content am-cf">
 
 
-        <div class="row">
+  <!-- 内容区域 -->
+  <div class="tpl-content-wrapper">
 
-          <div class="am-u-sm-12 am-u-md-12 am-u-lg-12">
-            <div class="widget am-cf">
-              <div class="widget-head am-cf">
-                <div class="widget-title am-fl">线条表单</div>
-                <div class="widget-function am-fr">
-                  <a href="javascript:;" class="am-icon-cog"></a>
+
+    <div class="row-content am-cf">
+
+
+      <div class="row">
+
+        <div class="am-u-sm-12 am-u-md-12 am-u-lg-12">
+          <div class="widget am-cf">
+            <div class="widget-head am-cf">
+              <div class="widget-title am-fl">线条表单</div>
+              <div class="widget-function am-fr">
+                <a href="javascript:;" class="am-icon-cog"></a>
+              </div>
+            </div>
+            <div class="widget-body am-fr">
+
+              <form class="am-form tpl-form-line-form">
+
+
+                <div class="am-form-group">
+                  <label for="user-phone" class="am-u-sm-3 am-form-label">版块
+                    <span class="tpl-form-line-small-title">Block</span>
+                  </label>
+                  <div class="am-u-sm-9">
+                    <select id="block" data-am-selected="{searchBox: 1}" style="display: none;">
+
+                    </select>
+
+                  </div>
                 </div>
-              </div>
-              <div class="widget-body am-fr">
 
-                <form class="am-form tpl-form-line-form">
-
-
-                  <div class="am-form-group">
-                    <label for="user-phone" class="am-u-sm-3 am-form-label">版块
-                      <span class="tpl-form-line-small-title">Block</span>
-                    </label>
-                    <div class="am-u-sm-9">
-                      <select id="block" data-am-selected="{searchBox: 1}" style="display: none;">
-
-                      </select>
-
-                    </div>
+                <div class="am-form-group">
+                  <label for="user-name" class="am-u-sm-3 am-form-label">分类名
+                    <span class="tpl-form-line-small-title">Cate</span>
+                  </label>
+                  <div class="am-u-sm-9">
+                    <input id="name" type="text" class="tpl-form-input" id="user-name" placeholder="请输入分类名">
+                    <small>请填写分类名2-10字</small>
                   </div>
+                </div>
 
-                  <div class="am-form-group">
-                    <label for="user-name" class="am-u-sm-3 am-form-label">分类名
-                      <span class="tpl-form-line-small-title">Cate</span>
-                    </label>
-                    <div class="am-u-sm-9">
-                      <input id="name" type="text" class="tpl-form-input" id="user-name" placeholder="请输入分类名">
-                      <small>请填写分类名2-10字</small>
-                    </div>
+                <div class="am-form-group">
+                  <label for="user-intro" class="am-u-sm-3 am-form-label">分类简介</label>
+                  <div class="am-u-sm-9">
+                    <textarea id="description" class="" rows="10" id="user-intro" placeholder="请输入分类简介"></textarea>
                   </div>
+                </div>
 
-                  <div class="am-form-group">
-                    <label for="user-intro" class="am-u-sm-3 am-form-label">分类简介</label>
-                    <div class="am-u-sm-9">
-                      <textarea id="description" class="" rows="10" id="user-intro" placeholder="请输入分类简介"></textarea>
-                    </div>
+                <div class="am-form-group">
+                  <div class="am-u-sm-9 am-u-sm-push-3">
+                    <button type="button" class="am-btn am-btn-primary tpl-btn-bg-color-success" onclick="addCategory()">提交</button>
                   </div>
-
-                  <div class="am-form-group">
-                    <div class="am-u-sm-9 am-u-sm-push-3">
-                      <button type="button" class="am-btn am-btn-primary tpl-btn-bg-color-success" onclick="addCategory()">提交</button>
-                    </div>
-                  </div>
-                </form>
-              </div>
+                </div>
+              </form>
             </div>
           </div>
         </div>
-
-
       </div>
+
+
     </div>
+  </div>
   </div>
   </div>
   <script src="../js/amazeui.min.js"></script>

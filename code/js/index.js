@@ -18,6 +18,7 @@ function checkLogin() {
             display: 'none'
         });
         addTou();
+        checkAdmin();
     } else {
         $login.css({
             display: 'none'
@@ -78,4 +79,15 @@ function home() {
         window.location.href = "html/home.html?id=" + uid;
         return false;
     });
+}
+
+function checkAdmin() {
+    let status = JSON.parse(sessionStorage.user).status;
+    console.log(sessionStorage.user);
+
+    if(status !== 2){
+        $(".admin").css({display: "none"});
+    } else {
+        $(".admin").css({display: ""});
+    }
 }

@@ -1,24 +1,23 @@
 var curPage = 1;
 var user;
-var id = 15;
-window.onload =
-  function () {
-    // user = JSON.parse(this.sessionStorage.user);
-    ajaxBlock(id);
-    userTemplate();
+window.onload = function () {
+  user = JSON.parse(this.sessionStorage.user);
+  var id = user.id;
+  console.log(user);
+  ajaxBlock(id);
+  userTemplate();
+}
 
-  }
-
-function
-userTemplate() {
-  var user = JSON.parse(sessionStorage.getItem('user'));
+function userTemplate() {
   document.getElementById('nickname').textContent = user.nickname;
   document.getElementById('nickname2').textContent = user.nickname;
   $('#avatar').attr('src', user.avatar)
 }
 
 function ajaxPosts(block) {
-  console.log('查询post block: ' + block);
+  if (block == null) {
+    block = 0;
+  }
   $.ajax({
     url: 'http://localhost:8080/post/block/' + block + '/page/1/id',
     type: 'GET',
@@ -162,6 +161,5 @@ function blockTemplate(data) {
 
 function
 logout() {
-  sessionStorage.isLogin = false;
-  window.location.href = './login.html';
+  window.location.href = '../index.html';
 }

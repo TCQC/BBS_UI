@@ -15,6 +15,7 @@ function checkLogin() {
         $login.css({ display: "" });
         $unLogin.css({ display: "none" });
         addTou();
+        checkAdmin();
     } else {
         $login.css({ display: "none" });
         $unLogin.css({ display: "" });
@@ -38,4 +39,15 @@ function home() {
         window.location.href = "home.html?id=" + uid;
         return false;
     });
+}
+
+function checkAdmin() {
+    let status = JSON.parse(sessionStorage.user).status;
+    console.log(sessionStorage.user);
+
+    if(status !== 2){
+        $(".admin").css({display: "none"});
+    } else {
+        $(".admin").css({display: ""});
+    }
 }
