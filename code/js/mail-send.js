@@ -10,6 +10,7 @@ $.ajax({
         if(res.status){
             u_avatar = res.data.avatar;
             u_nickname = res.data.nickname;
+            $(".title  h2 span").text(u_nickname);
         }
     }
 });
@@ -21,8 +22,7 @@ if(sessionStorage.user){
 
 $(function () {
     $("#btn-cmt").click(msgRep);
-    getMsgList();
-
+    getMsgList();   //获得聊天列表
 });
 
 function msgRep() {
@@ -30,18 +30,33 @@ function msgRep() {
 
     if(msg !== ""){
 
-        let user = "鸡王";
+        let user = usr.nickname;
         let $newLi = $("<li>\n" +
-            "<img src=http://ask.amazeui.org/uploads/avatar/000/00/59/45_avatar_mid.jpg>\n" +
+            "<img src=" + usr.avatar + ">\n" +
             "<div class=item-rep>\n" +
             "<p class=content>\n" +
             "<span class=user>" + user+ ":</span>\n" +
             "<span>" + msg + "</span>\n" +
             "</p>\n" +
-            "<p class=time>2018-05-31 12:36</p>\n" +
+            "<p class=time>刚刚发送</p>\n" +
             "</div>\n" +
             "</li>");
-
+        $.ajax({
+            url: "http://localhost:8080/message",
+            method: "post",
+            async: true,
+            data: {
+                "senderId": usr.id,
+                "receiverId": uid,
+                "content": msg
+            },
+            success:function () {
+                //
+            },
+            error: function (x) {
+                console.log(x.status);
+            }
+        });
         $(".msg-list ul").append($newLi);
         $("#ta-cmt").val("")
     }

@@ -43,7 +43,6 @@ function home() {
 
 function checkAdmin() {
     let status = JSON.parse(sessionStorage.user).status;
-    console.log(sessionStorage.user);
 
     if(status !== 2){
         $(".admin").css({display: "none"});

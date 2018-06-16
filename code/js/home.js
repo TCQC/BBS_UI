@@ -4,6 +4,7 @@ var $uinfo;
 $(function () {
     basicInfo();
     toggle();
+    getHot();
 });
 
 
@@ -173,4 +174,36 @@ function basicInfo() {
             }
         }
     });
+}
+
+function getHot() {
+    $.ajax({
+        url: 'http://localhost:8080/post/hot',
+        dataType: 'json',
+        async: true,
+        type: 'get',
+        success: function (result) {
+            if (result.status) {
+                updateHot(result.data);
+            }
+        },
+        error: function (xhr) {
+            alert(xhr.status);
+        }
+    })
+}
+
+function updateHot(data) {
+    $('#hot').html('');
+    $.each(data, function (index, item) {
+        $('#hot').append(
+            $('<li>')
+                .attr('class', 'folder')
+                .append(
+                    $('<a>')
+                        .attr('href', 'post.html?id=' + item.id)
+                        .append(item.title)
+                )
+        )
+    })
 }

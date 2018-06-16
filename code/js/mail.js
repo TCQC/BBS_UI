@@ -4,6 +4,7 @@ if(sessionStorage.user){
 $(function () {
     getMailInfo();
     newMail();
+    getHot();
 });
 
 function newMail() {
@@ -11,13 +12,25 @@ function newMail() {
         $('#add-mail').modal({
             relatedTarget: this,
             onConfirm: function(e) {
-                let userName = e.data;
-
+                if(e.data){
+                    $.ajax({
+                        url: "http://localhost:8080/user?nickname=" + e.data,
+                        method: "get",
+                        dataType: "json",
+                        success: function (res) {
+                            if(res.status){
+                                 window.location.href = "mail-send.html?id=" + res.data;
+                            } else {
+                                $("#my-alert").modal({});
+                            }
+                        }
+                    });
+                }
             },
-            onCancel: function() {
-                $("#prompt").text("请输入用户名：");
-            }
+            onCancel: function() {}
         });
+
+
     });
 }
 
@@ -49,4 +62,37 @@ function getMailInfo() {
             }
         }
     });
+}
+
+
+function getHot() {
+    $.ajax({
+        url: 'http://localhost:8080/post/hot',
+        dataType: 'json',
+        async: true,
+        type: 'get',
+        success: function (result) {
+            if (result.status) {
+                updateHot(result.data);
+            }
+        },
+        error: function (xhr) {
+            alert(xhr.status);
+        }
+    })
+}
+
+function updateHot(data) {
+    $('#hot').html('');
+    $.each(data, function (index, item) {
+        $('#hot').append(
+            $('<li>')
+                .attr('class', 'folder')
+                .append(
+                    $('<a>')
+                        .attr('href', 'post.html?id=' + item.id)
+                        .append(item.title)
+                )
+        )
+    })
 }
