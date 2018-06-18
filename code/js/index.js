@@ -3,6 +3,8 @@ $(function () {
     logOut();
     getBlockInfo();
     home();
+    search();
+
 });
 
 function checkLogin() {
@@ -90,4 +92,11 @@ function checkAdmin() {
     } else {
         $(".admin").css({display: ""});
     }
+}
+
+function search() {
+    $(".am-icon-search").on("click", function () {
+        let keyword = $(this).parent(".search").children("input").val();
+        if(keyword.trim()) window.location.href = "html/search.html?key=" + keyword;
+    })
 }

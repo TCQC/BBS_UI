@@ -1,7 +1,12 @@
 $(function () {
     checkLogin();
     logOut();
+    //已登录用户访问自己的主页
     home();
+    
+    //全页面的搜索功能
+    search();
+    
 });
 
 //修改头部的信息
@@ -49,4 +54,11 @@ function checkAdmin() {
     } else {
         $(".admin").css({display: ""});
     }
+}
+
+function search() {
+    $(".am-icon-search").on("click", function () {
+        let keyword = $(this).parent(".search").children("input").val();
+        if(keyword.trim()) window.location.href = "search.html?key=" + keyword;
+    })
 }
