@@ -8,6 +8,9 @@ $(function () {
 
     //确定所有的功能
     comment();
+
+    //获得推荐帖子
+    getHot();
 });
 
 //initial method to start all functions on comment
@@ -77,9 +80,12 @@ function comment() {
                     "content": content
                 },
                 success: function (res) {
-                    let $commentLi = genCmt(getRequest("id"), user.id, user.avatar, user.nickname, "刚刚评论",content);
-                    $(".comt-list").append($commentLi);
+                    if(res.status){
+                        let $commentLi = genCmt(res.data, user.id, user.avatar, user.nickname, "刚刚评论",content);
+                        $(".comt-list").append($commentLi);
+                        $(".ta-cmt")[0].value = "";
 
+                    }
                 },
                 error:function (x) {
                     console.log(x.status);
@@ -324,4 +330,36 @@ function checkRepArea() {
         $(".bottom").css({ display: "" });
         $(".cmt-unlogin").css({display: "none"});
     }
+}
+
+function getHot() {
+    $.ajax({
+        url: 'http://localhost:8080/post/hot',
+        dataType: 'json',
+        async: true,
+        type: 'get',
+        success: function (result) {
+            if (result.status) {
+                updateHot(result.data);
+            }
+        },
+        error: function (xhr) {
+            alert(xhr.status);
+        }
+    })
+}
+
+function updateHot(data) {
+    $('#hot').html('');
+    $.each(data, function (index, item) {
+        $('#hot').append(
+            $('<li>')
+                .attr('class', 'folder')
+                .append(
+                    $('<a>')
+                        .attr('href', 'post.html?id=' + item.id)
+                        .append(item.title)
+                )
+        )
+    })
 }

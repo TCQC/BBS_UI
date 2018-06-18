@@ -41,7 +41,7 @@ body {
 
 .main .top h1 {
     font-size: 20px;
-    color: #333333;
+    color: #444444;
 }
 
 .main .top p {
@@ -80,7 +80,7 @@ body {
 }
 
 .content h2 {
-    color: #333333;
+    color: #444444;
 }
 
 .post-item, .rep-item , .info-item {
@@ -131,7 +131,7 @@ body {
 }
 
 .info>div>h3 {
-    color: #333333;
+    color: #444444;
     margin-bottom: 8px;
 }
 

@@ -32,7 +32,7 @@ body {
 .main .title h1 {
     width: 500px;
     font-size: 20px;
-    color: #333333;
+    color: #444444;
 }
 
 .main .title button {
@@ -115,7 +115,7 @@ body {
     padding-bottom: 10px;
 }
 .info h3 {
-    color: #333333;
+    color: #444444;
 }
 
 .info .sponsor>div {
