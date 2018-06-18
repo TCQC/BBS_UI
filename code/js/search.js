@@ -1,3 +1,4 @@
+
 var key = getRequest("key");
 $(function () {
     //展示搜索到的帖子
@@ -9,8 +10,9 @@ $(function () {
 
 function getRequest(name) {
     let reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
-    let r = window.location.search.substr(1).match(reg);  //匹配目标参数
-    if (r!=null) return unescape(r[2]); return null; //返回参数值
+    let url = encodeURI(window.location.search);
+    let r = url.substr(1).match(reg);  //匹配目标参数
+    if (r!=null) return decodeURI(unescape(r[2])); return null; //返回参数值
 }
 
 function genPost(id, img, title, status, nickname, uid, n1, n2, time) {
@@ -50,11 +52,17 @@ function genPost(id, img, title, status, nickname, uid, n1, n2, time) {
 function showRes() {
     //todo ajax请求，得到所有的相关帖子
     $.ajax({
-        url: "http://localhost:8080/" ,
+        url: "http://localhost:8080/post?keyword=" + key,
         method: "get",
         dataType: "json",
         success: function (res) {
-
+            if(res.status){
+                $(".post-list").empty();
+                $.each(res.data, function () {
+                    let $post = genPost(this.id, this.avatar, this.title, this.status, this.nickname, this.userId, this.commentSum, this.favoriteSum, this.updateTime);
+                    $(".post-list").append($post);
+                })
+            }
         },
         error: function (x) {
             console.log(x.status);
