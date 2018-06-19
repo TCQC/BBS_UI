@@ -52,7 +52,7 @@ a {
     height: 100%;
     padding: 4px 0 4px 10px;
     color: #666;
-    border: none;
+    outline: none;
     width: 200px;
     border-radius: 4px 0 0 4px;
     float: left;
