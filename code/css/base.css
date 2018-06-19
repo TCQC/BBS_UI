@@ -72,6 +72,7 @@ a {
 #user img {
     cursor: pointer;
     width: 38px;
+    height: 38px;
     border-radius: 2px;
     margin-top: 6px;
 }

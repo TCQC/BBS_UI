@@ -60,8 +60,8 @@ function updateFavorites(data) {
             .attr('onclick', 'getStar(' + item.id + ')')
             .append(item.name)
         )
-    })
-    if (select == -1) {
+    });
+    if (select === -1) {
         select = data[0].id;
     }
     $('#' + select).attr('class', 'select folder');
