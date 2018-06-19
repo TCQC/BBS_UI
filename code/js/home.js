@@ -103,7 +103,7 @@ function genRep(pid, title, content) {
         "                    </div>"
 }
 
-function genInfo(gender, email, place, time, rank) {
+function genInfo(gender, place, time, rank) {
     return "<div class=info-item>\n" +
         "                        <div class=gender>\n" +
         "                            性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别：\n" +
@@ -112,10 +112,6 @@ function genInfo(gender, email, place, time, rank) {
         "                        <div class=rank>\n" +
         "                            用户等级：\n" +
         "                            <span>" + rank + "</span>\n" +
-        "                        </div>\n" +
-        "                        <div class=email>\n" +
-        "                            个人邮箱：\n" +
-        "                            <span>" + email + "</span>\n" +
         "                        </div>\n" +
         "                        <div class=work-place>\n" +
         "                            工作地点：\n" +
@@ -143,7 +139,7 @@ function basicInfo() {
                 $(".top h1").text(x.nickname);
                 $(".top p").text(x.description);
 
-                $uinfo = genInfo(x.gender, "", x.workPlace, x.lastLoginTime, x.rank)
+                $uinfo = genInfo(x.gender, x.workPlace, x.lastLoginTime, x.rank)
             }
         }
     });
