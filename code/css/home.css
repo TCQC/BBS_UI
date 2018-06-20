@@ -84,6 +84,7 @@ body {
 }
 
 .post-item, .rep-item , .info-item {
+    position: relative;
     margin-top: 14px;
     padding-bottom: 10px;
     border-bottom: 1px solid #e6e6e6;
@@ -102,6 +103,12 @@ body {
     margin-top: 8px;
     color: #666666;
     font-size: 13px;
+}
+
+.post-item .edit {
+    position: absolute;
+    right: 0;
+    top: 10px;
 }
 
 .info-item>div {

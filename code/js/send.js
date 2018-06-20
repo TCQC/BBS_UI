@@ -1,11 +1,21 @@
 var isPost = true;
+var pid = -1;
 
 $(function () {
+    if(getRequest("id") !== null) pid = getRequest("id");
+    if(pid !== -1) insertPost();
+
     addBlockInfo();
     catInfo();
     toggle();
     send();
 });
+
+function getRequest(name) {
+    let reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+    let r = window.location.search.substr(1).match(reg);  //匹配目标参数
+    if (r!=null) return unescape(r[2]); return null; //返回参数值
+}
 
 function toggle() {
     $(".info").height($(".main").height() - 51);
@@ -47,23 +57,44 @@ function send() {
 
                 if(isPost)  //是普通帖子，就要获得发送的分类值
                     cid = getCatId;
-                
-                $.ajax({
-                    url: "http://localhost:8080/post",
-                    method: "post",
-                    dataType: "json",
-                    data: {
-                        "userId": usr.id,
-                        "categoryId": cid,
-                        "title": title,
-                        "content": content
-                    },
-                    success: function (res) {
-                        if(res.status){
-                            window.location.href = "post.html?id=" + res.data;
+                if(pid === -1){ //说明是新发帖子
+                    $.ajax({
+                        url: "http://localhost:8080/post",
+                        method: "post",
+                        dataType: "json",
+                        data: {
+                            "userId": usr.id,
+                            "categoryId": cid,
+                            "title": title,
+                            "content": content
+                        },
+                        success: function (res) {
+                            if(res.status){
+                                window.location.href = "post.html?id=" + res.data;
+                            }
                         }
-                    }
-                });
+                    });
+                } else {// 修改帖子
+                    $.ajax({
+                        url: "http://localhost:8080/post",
+                        method: "put",
+                        data: {
+                            "id": pid,
+                            "userId": usr.id,
+                            "categoryId": cid,
+                            "title": title,
+                            "content": content
+                        },
+                        success: function (res) {
+                            if(res.status){
+                                window.location.href = "post.html?id=" + pid;
+                            }
+                        },
+                        error: function (x) {
+                            console.log(x.status);
+                        }
+                    });
+                }
             }
         }
     })
@@ -129,3 +160,22 @@ function catInfo() {
         });
     });
 }
+
+function insertPost() {
+    $.ajax({
+        url: "http://localhost:8080/post/id/" + pid,
+        method: "get",
+        dataType: "json",
+        success: function (res) {
+            if(res.status){
+                $(".rtc input").val(res.data.title);
+                $(".post-body textarea").val(res.data.content);
+            }
+        },
+        error: function (x) {
+            console.log(x.status);
+        }
+    });
+}
+
+

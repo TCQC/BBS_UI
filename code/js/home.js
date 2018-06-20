@@ -26,19 +26,15 @@ function toggle() {
 
         if(type === "post"){
             $(".item-list").empty();
-            $.ajax({
-                url: "http://localhost:8080/post/user/" + uid + "/page/1/id",
-                method: "get",
-                dataType: "json",
-                success: function (res) {
-                    if(res.status){
-                        $.each(res.data, function () {
-                            $(".item-list").append(genPost(this.id, this.title, this.commentSum, this.favoriteSum, this.updateTime));
-                        })
-                    }
-                }
-            });
 
+            //进行用户信息比对，实现编辑post的功能
+            if(sessionStorage.user){
+                var user = JSON.parse(sessionStorage.user);
+                if("" + user.id === uid) getMyPosts();
+                else getPosts();
+            } else {
+                getPosts();
+            }
         } else if (type === "ask"){
             $(".item-list").empty();
 
@@ -79,7 +75,7 @@ function toggle() {
 
 
 function genPost(pid, title, nc, ns, time) {
-    return "<div class=post-item>\n" +
+    return "<div class=post-item>" +
         "                        <h4>\n" +
         "                            <a href=post.html?id=" + pid + ">" + title + "</a>\n" +
         "                        </h4>\n" +
@@ -87,7 +83,23 @@ function genPost(pid, title, nc, ns, time) {
         "                            <span>" + nc + "</span>次评论 •\n" +
         "                            <span>" + ns +"</span> 个收藏 •\n" +
         "                            <span>" + time + "</span>\n" +
-        "                        </p>\n" +
+        "                        </p>" +
+        "                    </div>"
+}
+
+function genMyPost(pid, title, nc, ns, time) {
+    return "<div class=post-item>" +
+        "                        <h4>\n" +
+        "                            <a href=post.html?id=" + pid + ">" + title + "</a>\n" +
+        "                        </h4>\n" +
+        "                        <p>\n" +
+        "                            <span>" + nc + "</span>次评论 •\n" +
+        "                            <span>" + ns +"</span> 个收藏 •\n" +
+        "                            <span>" + time + "</span>\n" +
+        "                        </p>" +
+        "                        <a href=send.html?id=" + pid + " class=edit>" +
+        "                        <button class='am-btn-success am-btn-xs am-radius am-btn'>编辑</button>" +
+        "                        </a>" +
         "                    </div>"
 }
 
@@ -158,18 +170,15 @@ function basicInfo() {
     });
 
     $(".item-list").empty();
-    $.ajax({
-        url: "http://localhost:8080/post/user/" + uid + "/page/1/id",
-        method: "get",
-        dataType: "json",
-        success: function (res) {
-            if(res.status){
-                $.each(res.data, function () {
-                    $(".item-list").append(genPost(this.id, this.title, this.commentSum, this.favoriteSum, this.updateTime));
-                })
-            }
-        }
-    });
+
+    //默认得到所有帖子
+    if(sessionStorage.user){
+        var user = JSON.parse(sessionStorage.user);
+        if("" + user.id === uid) getMyPosts();
+        else getPosts();
+    } else {
+        getPosts();
+    }
 }
 
 function getHot() {
@@ -202,4 +211,34 @@ function updateHot(data) {
                 )
         )
     })
+}
+
+function getPosts() {
+    $.ajax({
+        url: "http://localhost:8080/post/user/" + uid + "/page/1/id",
+        method: "get",
+        dataType: "json",
+        success: function (res) {
+            if(res.status){
+                $.each(res.data, function () {
+                        $(".item-list").append(genPost(this.id, this.title, this.commentSum, this.favoriteSum, this.updateTime));
+                })
+            }
+        }
+    });
+}
+
+function getMyPosts() {
+    $.ajax({
+        url: "http://localhost:8080/post/user/" + uid + "/page/1/id",
+        method: "get",
+        dataType: "json",
+        success: function (res) {
+            if(res.status){
+                $.each(res.data, function () {
+                    $(".item-list").append(genMyPost(this.id, this.title, this.commentSum, this.favoriteSum, this.updateTime));
+                })
+            }
+        }
+    });
 }
